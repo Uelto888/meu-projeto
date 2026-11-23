@@ -26,6 +26,8 @@ p{margin:0}
 .wm{font-family:var(--display);font-weight:600;letter-spacing:.16em;line-height:1}
 .lock{display:inline-flex;align-items:center;gap:.42em}
 .lock .wm{font-size:.62em;padding-top:.04em}
+.gw{display:inline-grid;gap:.16em;line-height:1}
+.gw small{font-family:var(--mono);font-size:max(9px,.17em);letter-spacing:.5em;color:var(--champagne);font-weight:500}
 
 /* HERO */
 .hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 56px);padding-bottom:72px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 500px at 85% -10%,rgba(200,169,106,.10),transparent 60%),var(--ink)}
@@ -328,11 +330,11 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="lbl">Manual de identidade · v1.0 · nov 2026</span>
+        <span class="lbl">Manual de identidade · v1.1 · nov 2026</span>
         <h1>Conhecimento <em>em prática.</em></h1>
         <p class="lede">Plataforma de marca, três conceitos, sistema de identidade completo e aplicações para uma empresa de educação digital que usa inteligência artificial para escalar o ensino de especialistas reais.</p>
         <div class="meta-row">
-          <div><b>Marca recomendada</b>Praxia</div>
+          <div><b>Marca</b>Grupo Praxia</div>
           <div><b>Categoria</b>Educação profissional digital</div>
           <div><b>Status</b>Proposta para validação</div>
         </div>
@@ -363,7 +365,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     <div class="board risk"><span class="tag hi">Crítico</span><div><h3>Rosto do fundador × empresa de vários especialistas</h3><p class="muted">Se o avatar do fundador é a cara de todos os cursos, a marca vira marca pessoal e trava a entrada de outros especialistas. Solução adotada: a empresa é a marca-mãe; o fundador é o primeiro <b>apresentador</b> do sistema, não o sistema. Cada especialista futuro ganha o próprio avatar dentro do mesmo enquadramento.</p></div></div>
     <div class="board risk"><span class="tag hi">Crítico</span><div><h3>Transparência sobre o avatar</h3><p class="muted">Esconder que a aula é apresentada por avatar é o caminho mais rápido para a percepção de "vídeo de IA" que você quer evitar. A marca assume isso com um selo próprio ("Apresentação digital do especialista"): transforma um risco de confiança em diferencial de método. Verifique as regras do CONAR e das plataformas sobre conteúdo sintético.</p></div></div>
     <div class="board risk"><span class="tag">Alto</span><div><h3>Sete nichos no lançamento diluem autoridade</h3><p class="muted">Credibilidade se constrói por profundidade. A arquitetura abaixo comporta todos os segmentos, mas o lançamento deve focar em uma ou duas escolas (sugestão: Negócios Imobiliários, onde está sua experiência, e IA Aplicada) e expandir depois de provar resultado.</p></div></div>
-    <div class="board risk"><span class="tag">Alto</span><div><h3>Nome sem validação jurídica</h3><p class="muted">O briefing não trazia nome. Propus três. Antes de produzir qualquer peça: busca no INPI (classes 41 e 9), domínio .com.br/.com e @ nas redes. Nome sem registro é ativo que não é seu.</p></div></div>
+    <div class="board risk"><span class="tag">Alto</span><div><h3>Nome sem validação jurídica</h3><p class="muted">praxia.com.br já está registrado por terceiros. "Grupo" resolve o domínio, mas não diferencia a marca no INPI: o elemento avaliado continua sendo "Praxia". Antes de produzir qualquer peça, confirme o setor do titular e faça a busca nas classes 41 e 9.</p></div></div>
   </div>
 </div></section>
 
@@ -472,6 +474,14 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <div class="tile"><div class="art on-ink mono-paper"><span class="lock" style="font-size:52px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Monocromática negativa</div></div>
       <div class="tile"><div class="art on-champ"><span class="lock" style="font-size:52px;--sa:#0E1013"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Monocromática sobre champanhe</div></div>
     </div>
+    <div class="board">
+      <h3>Assinatura institucional · Grupo Praxia</h3>
+      <p class="muted">Usada em razão social, site institucional, contratos B2B, certificados e materiais para investidores. Para o aluno, cursos e redes, a assinatura é só Praxia.</p>
+      <div class="cols-2" style="margin-top:20px">
+        <div class="tile"><div class="art on-ink"><span class="lock" style="font-size:64px"><svg class="sym"><use href="#px"/></svg><span class="gw"><small>GRUPO</small><span class="wm">PRAXIA</span></span></span></div><div class="cap">Institucional · fundo grafite</div></div>
+        <div class="tile"><div class="art on-paper"><span class="lock" style="font-size:64px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="gw"><small style="color:var(--bronze)">GRUPO</small><span class="wm">PRAXIA</span></span></span></div><div class="cap">Institucional · fundo claro</div></div>
+      </div>
+    </div>
     <div class="cols-2">
       <div class="board">
         <h3>Área de proteção e redução</h3>
@@ -549,7 +559,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     <div>
       <div class="mock-cap"><h3>Site institucional</h3><span class="lbl">Desktop · 1440</span></div>
       <div class="browser">
-        <div class="bar"><i></i><i></i><i></i><span class="url">praxia.com.br</span></div>
+        <div class="bar"><i></i><i></i><i></i><span class="url">grupopraxia.com.br</span></div>
         <div class="site">
           <nav><span class="lock" style="font-size:30px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="links"><span>Escolas</span><span>Especialistas</span><span>Para empresas</span><span>Método</span></span><span class="btn">Começar</span></nav>
           <div class="s-hero">
@@ -569,7 +579,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     <div>
       <div class="mock-cap"><h3>Plataforma de cursos</h3><span class="lbl">Área do aluno</span></div>
       <div class="browser">
-        <div class="bar"><i></i><i></i><i></i><span class="url">app.praxia.com.br/imo-01/modulo-3</span></div>
+        <div class="bar"><i></i><i></i><i></i><span class="url">app.grupopraxia.com.br/imo-01/modulo-3</span></div>
         <div class="lms">
           <aside>
             <span class="lock" style="font-size:24px;margin-bottom:14px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span>
@@ -619,7 +629,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <div class="social">
         <div class="phone">
           <div class="ig-head"><div class="ig-av"><svg class="sym"><use href="#px"/></svg></div><div class="ig-stats"><div><b>128</b>posts</div><div><b>—</b>seguidores</div><div><b>12</b>seguindo</div></div></div>
-          <div class="ig-bio"><b>Praxia</b><br>Educação profissional com quem já fez.<br>Escolas de Imobiliário, IA, Liderança e Vendas.<br><span style="color:#9DB4FF">praxia.com.br</span></div>
+          <div class="ig-bio"><b>Praxia</b><br>Educação profissional com quem já fez.<br>Escolas de Imobiliário, IA, Liderança e Vendas.<br><span style="color:#9DB4FF">grupopraxia.com.br</span></div>
           <div class="ig-hl"><div><span>IMO</span>Imobiliário</div><div><span>IAA</span>IA</div><div><span>LID</span>Liderança</div><div><span>?</span>Método</div></div>
           <div class="ig-grid">
             <div style="background:#0E1013;color:#F2F1ED">Saber não é fazer.</div>
@@ -648,9 +658,9 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
         <svg class="sym wmark"><use href="#px"/></svg>
         <div class="top"><span class="lock" style="--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="lbl">Certificado · IMO-01-2026-00412</span></div>
         <div class="mid"><small>Certificamos que</small><h4>Nome do Aluno</h4><p>concluiu o curso <b>Captação de imóveis com exclusividade</b>, da Escola de Negócios Imobiliários, com carga horária de 12 horas e entrega do projeto prático final.</p></div>
-        <div class="bot"><div class="sig">Especialista responsável</div><div class="sig">Direção acadêmica Praxia</div><div class="seal"><svg class="sym" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg></div></div>
+        <div class="bot"><div class="sig">Especialista responsável</div><div class="sig">Direção acadêmica · Grupo Praxia</div><div class="seal"><svg class="sym" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg></div></div>
       </div>
-      <p class="muted" style="margin-top:12px;font-size:14px">O código do certificado permite validação pública em praxia.com.br/validar. É o detalhe que dá credibilidade ao documento.</p>
+      <p class="muted" style="margin-top:12px;font-size:14px">O código do certificado permite validação pública em grupopraxia.com.br/validar. É o detalhe que dá credibilidade ao documento.</p>
     </div>
 
     <div>
@@ -731,7 +741,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
   </div>
   <div class="ch-body">
     <div class="arch">
-      <div class="mother"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><p>Marca-mãe. Concentra reputação, certificação e relacionamento. Nunca é substituída por marca de curso ou de especialista.</p></div>
+      <div class="mother"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="gw"><small>GRUPO</small><span class="wm">PRAXIA</span></span></span><p>Grupo Praxia é a empresa: razão social, domínio, contratos e certificação. Praxia é a marca que o aluno vê. Nenhuma das duas é substituída por marca de curso ou de especialista.</p></div>
       <div class="subs">
         <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Escolas</em></span><p class="muted">Imobiliário, IA Aplicada, Liderança, Vendas, Marketing, Negócios, Carreira. Código de três letras.</p></div>
         <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Faculty</em></span><p class="muted">Rede de especialistas convidados, cada um com avatar próprio no padrão do capítulo 9.</p></div>
@@ -742,7 +752,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     <div class="cols-3">
       <div class="board"><h3>Novos cursos</h3><p class="muted">Código ESCOLA-NN, capa no template 4:5, o símbolo grande recortado no canto. Nenhum curso recebe logotipo próprio.</p></div>
       <div class="board"><h3>Novos especialistas</h3><p class="muted">Lower third, selo de apresentação digital e figurino padrão. A assinatura é sempre "Especialista Praxia", não marca pessoal paralela.</p></div>
-      <div class="board"><h3>Novos mercados</h3><p class="muted">O nome funciona em espanhol e inglês sem adaptação. Para expansão, reserve praxia.com e @praxia nas redes desde já, se disponíveis.</p></div>
+      <div class="board"><h3>Novos mercados</h3><p class="muted">O nome funciona em espanhol e inglês sem adaptação. Reserve grupopraxia.com.br, grupopraxia.com e um @ curto nas redes (@grupopraxia ou @praxia.oficial) desde já.</p></div>
     </div>
     <div class="board">
       <h3>Próximos passos</h3>
@@ -759,7 +769,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
 
 </main>
 
-<div class="wrap"><footer><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span>Manual de identidade · proposta v1.0 · nome sujeito a validação</span></footer></div>
+<div class="wrap"><footer><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span>Grupo Praxia · manual de identidade v1.1 · nome sujeito a validação</span></footer></div>
 
 <script>
 (function(){
