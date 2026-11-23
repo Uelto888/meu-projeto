@@ -1,0 +1,9 @@
+/* Praxia — tokens de marca v1.0 */
+:root{
+  --praxia-grafite:#0E1013; --praxia-grafite-medio:#16191E; --praxia-ardosia:#23272E;
+  --praxia-nevoa:#8A9099; --praxia-papel:#F2F1ED;
+  --praxia-champanhe:#C8A96A; --praxia-bronze:#9C7A45; --praxia-sinal:#3D6BFF;
+  --praxia-display:"Sora",system-ui,sans-serif;
+  --praxia-texto:"IBM Plex Sans",system-ui,sans-serif;
+  --praxia-mono:"JetBrains Mono",ui-monospace,monospace;
+}

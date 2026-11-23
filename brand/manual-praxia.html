@@ -1,0 +1,791 @@
+<title>Praxia Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: manual em capítulos sobre fundo grafite; cada capítulo tem uma coluna de rótulo estreita e uma área de prancha larga. */
+:root{
+  --ink:#0E1013; --graphite:#16191E; --slate:#23272E; --line:#2E333B; --mist:#8A9099;
+  --paper:#F2F1ED; --paper-2:#E4E2DC; --champagne:#C8A96A; --bronze:#9C7A45; --signal:#3D6BFF;
+  --bg:var(--ink); --fg:var(--paper); --muted:#A9AEB6;
+  --display:"Sora","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--champagne)}
+.muted{color:var(--muted)}
+.svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+.sym{display:inline-block;width:1em;height:1em;flex:none}
+.wm{font-family:var(--display);font-weight:600;letter-spacing:.16em;line-height:1}
+.lock{display:inline-flex;align-items:center;gap:.42em}
+.lock .wm{font-size:.62em;padding-top:.04em}
+
+/* HERO */
+.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 56px);padding-bottom:72px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 500px at 85% -10%,rgba(200,169,106,.10),transparent 60%),var(--ink)}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(40px,6.4vw,84px);font-weight:600;letter-spacing:-.03em;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--champagne)}
+.hero .lede{max-width:56ch;margin-top:22px;color:var(--muted);font-size:18px}
+.hero-mark{justify-self:end;font-size:clamp(140px,22vw,280px);color:var(--paper)}
+.meta-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--mist)}
+.meta-row b{display:block;color:var(--paper);font-weight:500;font-size:13px}
+
+/* TOC */
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;padding-block:20px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px}
+.toc a{color:var(--muted);text-decoration:none}
+.toc a:hover,.toc a:focus-visible{color:var(--champagne)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+/* CHAPTERS */
+.ch{padding-block:88px;border-bottom:1px solid var(--line)}
+.ch-head{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:44px}
+.ch-head h2{font-size:clamp(28px,3.4vw,42px)}
+.ch-head p{margin-top:14px;max-width:64ch;color:var(--muted)}
+.ch-body{display:grid;gap:28px}
+.cols-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.cols-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.cols-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.board{background:var(--graphite);border:1px solid var(--line);border-radius:6px;padding:28px;min-width:0}
+.board h3{font-size:19px;margin-bottom:10px}
+.board p+p{margin-top:10px}
+.board ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.board li+li{margin-top:6px}
+
+/* Diagnóstico */
+.risk{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.risk .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 8px;border:1px solid var(--champagne);color:var(--champagne);border-radius:3px;white-space:nowrap}
+.risk .tag.hi{border-color:var(--signal);color:#9DB4FF}
+
+/* Plataforma */
+.pillar{border-top:2px solid var(--champagne);padding-top:16px}
+.pillar h4{font-size:16px;margin-bottom:6px}
+.statement{font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.25;letter-spacing:-.015em;max-width:30ch}
+.statement b{font-weight:600;color:var(--champagne)}
+.voice{width:100%;border-collapse:collapse;font-size:15px}
+.voice th,.voice td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.voice th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);font-weight:400}
+.voice td:first-child{color:var(--paper);font-weight:500;white-space:nowrap}
+.scroll-x{overflow-x:auto}
+
+/* Conceitos */
+.concept{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.concept .stage{display:grid;place-items:center;padding:56px 24px;min-height:320px;background:var(--graphite)}
+.concept .stage.light{background:var(--paper);color:var(--ink)}
+.concept .info{padding:32px;background:var(--ink);display:grid;gap:14px;align-content:start}
+.concept .info h3{font-size:26px}
+.concept .chip{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--champagne);color:var(--ink)}
+.concept .chip.alt{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.proscons{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:14px}
+.proscons h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);font-weight:400;margin-bottom:6px}
+.proscons ul{margin:0;padding-left:16px;color:var(--muted)}
+.big-lock{font-size:clamp(64px,8vw,96px)}
+.wm-v{font-family:var(--display);font-weight:300;letter-spacing:.04em;line-height:1}
+.wm-s{font-family:var(--display);font-weight:700;letter-spacing:.3em;line-height:1}
+
+/* Logo system */
+.tile{border:1px solid var(--line);border-radius:6px;display:grid;grid-template-rows:1fr auto;min-height:220px;overflow:hidden;min-width:0}
+.tile .art{display:grid;place-items:center;padding:32px 16px}
+.tile .cap{padding:12px 16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--mist);background:var(--ink)}
+.on-ink{background:var(--ink);color:var(--paper)}
+.on-graph{background:var(--graphite);color:var(--paper)}
+.on-paper{background:var(--paper);color:var(--ink)}
+.on-champ{background:var(--champagne);color:var(--ink);--sb:var(--ink)}
+.mono-paper{--sb:var(--paper)}
+.mono-ink{--sb:var(--ink)}
+.clear{position:relative;display:inline-grid;place-items:center;padding:28px;outline:1px dashed rgba(200,169,106,.6);outline-offset:0}
+.clear::after{content:"x";position:absolute;top:4px;left:8px;font-family:var(--mono);font-size:10px;color:var(--champagne)}
+.dont{position:relative}
+.dont::before{content:"";position:absolute;inset:14px;background:linear-gradient(to top right,transparent calc(50% - 1px),#E5484D 50%,transparent calc(50% + 1px));pointer-events:none;opacity:.8}
+
+/* Cores */
+.swatch{border-radius:6px;overflow:hidden;border:1px solid var(--line);min-width:0}
+.swatch .chipc{height:120px;display:flex;align-items:flex-end;padding:12px;font-family:var(--mono);font-size:11px}
+.swatch .sw-info{padding:14px;background:var(--graphite);font-size:13px}
+.swatch .sw-info b{display:block;font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:4px}
+.swatch code{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.copy{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--paper);border-bottom:1px dotted var(--mist)}
+.copy:hover{color:var(--champagne)}
+.ratio{display:flex;height:44px;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.ratio div{display:grid;place-items:center;font-family:var(--mono);font-size:11px}
+
+/* Tipografia */
+.type-spec{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:24px;align-items:end;padding-block:24px;border-bottom:1px solid var(--line)}
+.type-spec .sample{font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:-.02em;overflow-wrap:anywhere}
+.scale{display:grid;gap:14px}
+.scale .row{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px}
+.scale .row code{font-family:var(--mono);font-size:11.5px;color:var(--mist)}
+
+/* Mockups */
+.mock-cap{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:14px;flex-wrap:wrap}
+.mock-cap h3{font-size:20px}
+.browser{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#0A0B0E;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+.browser .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#1B1E24;border-bottom:1px solid var(--line)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#3A3F47}
+.browser .url{margin-left:12px;flex:1;max-width:360px;background:#0E1013;border-radius:4px;padding:4px 10px;font-family:var(--mono);font-size:11px;color:var(--mist);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site{background:var(--ink)}
+.site nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 32px;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+.site nav .links{display:flex;gap:22px;color:var(--muted);flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 18px;border-radius:4px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.02em;background:var(--champagne);color:var(--ink)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--paper)}
+.site .s-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;padding:56px 32px 48px;align-items:center}
+.site .s-hero h4{font-size:clamp(28px,3.6vw,46px);letter-spacing:-.025em;font-weight:600}
+.site .s-hero h4 em{font-style:normal;color:var(--champagne)}
+.site .s-hero p{margin-top:16px;color:var(--muted);max-width:44ch;font-size:15px}
+.site .actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.grid-art{aspect-ratio:1;max-width:100%;border-radius:6px;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/12.5% 12.5%,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/12.5% 12.5%, var(--graphite);
+  display:grid;place-items:center;font-size:120px;color:var(--paper);position:relative}
+.grid-art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(61,107,255,.18),transparent 55%)}
+.schools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.schools div{padding:18px 20px;border-right:1px solid var(--line);font-size:13px;min-width:0}
+.schools div:last-child{border-right:0}
+.schools b{display:block;font-family:var(--display);font-size:15px;margin-top:4px}
+.code{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--champagne)}
+
+.lms{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:420px;background:var(--ink)}
+.lms aside{border-right:1px solid var(--line);padding:20px;font-size:13px;display:grid;gap:6px;align-content:start;background:#111317}
+.lms aside .mod{padding:10px 12px;border-radius:4px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.lms aside .mod.on{background:var(--slate);color:var(--paper);box-shadow:inset 2px 0 0 var(--champagne)}
+.lms aside .mod.done{color:var(--paper)}
+.lms aside .mod.done span:last-child{color:var(--champagne)}
+.lms main{padding:24px;display:grid;gap:16px;align-content:start}
+.player{aspect-ratio:16/9;max-width:100%;border-radius:6px;background:linear-gradient(135deg,#1B1F26,#0E1013);position:relative;overflow:hidden}
+.player .av{position:absolute;right:8%;bottom:0;width:34%;height:88%}
+.player .ttl{position:absolute;left:6%;top:12%;max-width:48%}
+.player .ttl small{display:block;margin-bottom:8px}
+.player .ttl strong{font-family:var(--display);font-size:clamp(16px,2.2vw,28px);line-height:1.15;font-weight:600}
+.player .ctrl{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.12)}
+.player .ctrl::before{content:"";display:block;height:100%;width:38%;background:var(--champagne)}
+.progress{height:6px;border-radius:99px;background:var(--slate);overflow:hidden}
+.progress span{display:block;height:100%;background:var(--champagne)}
+
+.covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cover{aspect-ratio:4/5;max-width:100%;border-radius:6px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;min-width:0}
+.cover .big{position:absolute;right:-18%;bottom:-14%;font-size:260px;opacity:.12}
+.cover h4{font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em;position:relative}
+.cover .foot{display:flex;justify-content:space-between;align-items:center;font-size:12px;position:relative}
+
+.thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.thumb{aspect-ratio:16/9;max-width:100%;border-radius:8px;position:relative;overflow:hidden;background:var(--ink);border:1px solid var(--line);min-width:0}
+.thumb .av{position:absolute;right:0;bottom:0;height:96%;width:44%}
+.thumb .txt{position:absolute;left:6%;top:10%;bottom:10%;width:56%;display:flex;flex-direction:column;justify-content:space-between}
+.thumb strong{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.6vw,32px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.thumb strong em{font-style:normal;color:var(--champagne)}
+.thumb .ep{font-family:var(--mono);font-size:11px;color:var(--mist)}
+.thumb .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.8);font-family:var(--mono);font-size:11px;padding:2px 6px;border-radius:3px;color:#fff}
+
+.social{display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;align-items:start}
+.phone{width:100%;max-width:300px;aspect-ratio:9/19;border-radius:34px;border:8px solid #22262D;background:var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.ig-head{padding:18px 14px 10px;display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
+.ig-av{width:72px;height:72px;border-radius:50%;background:var(--ink);border:2px solid var(--champagne);display:grid;place-items:center;font-size:34px;color:var(--paper)}
+.ig-stats{display:flex;justify-content:space-between;font-size:11px;text-align:center;color:var(--muted)}
+.ig-stats b{display:block;color:var(--paper);font-size:13px}
+.ig-bio{padding:0 14px 10px;font-size:11.5px;line-height:1.45}
+.ig-bio b{font-size:12.5px}
+.ig-hl{display:flex;gap:10px;padding:4px 14px 12px}
+.ig-hl div{text-align:center;font-size:9.5px;color:var(--muted)}
+.ig-hl span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--graphite);font-family:var(--mono);font-size:9px;color:var(--champagne);margin-bottom:4px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;flex:1;align-content:start}
+.ig-grid div{aspect-ratio:1;display:grid;place-items:center;font-family:var(--display);font-size:10px;font-weight:600;text-align:center;padding:6px;line-height:1.15}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.post{aspect-ratio:1;max-width:100%;border-radius:6px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;min-width:0}
+.post.story{aspect-ratio:9/16}
+.post h4{font-size:clamp(17px,1.9vw,24px);letter-spacing:-.02em;position:relative}
+.post .foot{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-family:var(--mono);position:relative}
+
+.cert{background:var(--paper);color:var(--ink);aspect-ratio:1.414/1;max-width:100%;border-radius:4px;padding:5%;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+.cert::before{content:"";position:absolute;inset:3%;border:1px solid var(--bronze);pointer-events:none}
+.cert .top{display:flex;justify-content:space-between;align-items:center;font-size:clamp(18px,2.4vw,30px);position:relative}
+.cert .top .lbl{color:var(--bronze);font-size:clamp(8px,1vw,11px)}
+.cert .mid{align-self:center;position:relative}
+.cert .mid small{font-family:var(--mono);font-size:clamp(8px,1vw,11px);letter-spacing:.16em;text-transform:uppercase;color:#6A6F78}
+.cert .mid h4{font-size:clamp(24px,4.4vw,56px);font-weight:300;letter-spacing:-.02em;margin:.25em 0}
+.cert .mid p{font-size:clamp(10px,1.3vw,15px);max-width:58ch;color:#3A3F47}
+.cert .bot{display:grid;grid-template-columns:1fr 1fr auto;gap:5%;align-items:end;font-size:clamp(8px,1vw,12px);position:relative}
+.cert .sig{border-top:1px solid var(--ink);padding-top:6px}
+.cert .seal{width:clamp(48px,8vw,96px);aspect-ratio:1;border-radius:50%;border:1px solid var(--bronze);display:grid;place-items:center;font-size:clamp(22px,3.6vw,44px);color:var(--ink)}
+.cert .wmark{position:absolute;right:-6%;top:-10%;font-size:clamp(200px,40vw,520px);opacity:.035;color:var(--ink);--sb:var(--ink)}
+
+.slides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.slide{aspect-ratio:16/9;max-width:100%;border-radius:6px;padding:5%;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;border:1px solid var(--line);min-width:0}
+.slide h4{font-size:clamp(18px,2.4vw,32px);letter-spacing:-.02em}
+.slide .foot{display:flex;justify-content:space-between;font-family:var(--mono);font-size:clamp(8px,.9vw,11px);color:var(--mist)}
+.slide .pts{display:grid;grid-template-columns:repeat(3,1fr);gap:4%;font-size:clamp(9px,1.05vw,13px)}
+.slide .pts b{display:block;font-family:var(--display);font-size:clamp(14px,2vw,26px);color:var(--champagne);font-weight:600}
+
+/* Vinheta */
+.vt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}
+.vt-stage{aspect-ratio:16/9;max-width:100%;border-radius:8px;background:var(--ink);border:1px solid var(--line);position:relative;overflow:hidden;display:grid;place-items:center}
+.vt-stage .gridbg{position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.35}
+.vt-lock{position:relative;display:flex;align-items:center;gap:22px;font-size:clamp(46px,7vw,84px)}
+.vt-lock svg rect{transform-box:fill-box;transform-origin:bottom}
+.vt-lock .wm{font-size:.42em}
+.vt-sub{position:absolute;bottom:14%;left:0;right:0;text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.play .vt-lock .stem{animation:stem .7s cubic-bezier(.2,.8,.2,1) both}
+.play .vt-lock .arrow{animation:arr .8s .45s cubic-bezier(.2,.8,.2,1) both}
+.play .vt-lock .wm{animation:wm .9s 1.05s cubic-bezier(.2,.8,.2,1) both}
+.play .vt-sub{animation:fade .8s 1.7s both}
+.play .gridbg{animation:gridin 2.4s both}
+@keyframes stem{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes arr{from{transform:translate(-14px,14px);opacity:0}to{transform:none;opacity:1}}
+@keyframes wm{from{letter-spacing:.6em;opacity:0}to{letter-spacing:.16em;opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes gridin{from{opacity:0}to{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.play *{animation:none!important}}
+.replay{all:unset;cursor:pointer;position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:11px;padding:6px 10px;border:1px solid var(--line);border-radius:4px;color:var(--muted);background:var(--graphite)}
+.replay:hover{color:var(--paper)}
+.timeline{display:grid;gap:0}
+.timeline .step{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.timeline .step code{font-family:var(--mono);font-size:12px;color:var(--champagne)}
+
+/* Avatar */
+.avatar-sys{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.av-frame{aspect-ratio:16/9;max-width:100%;border-radius:8px;position:relative;overflow:hidden;background:linear-gradient(160deg,#1C2027 0%,#0E1013 70%);border:1px solid var(--line)}
+.av-frame .av{position:absolute;left:50%;transform:translateX(-50%);bottom:0;height:90%;width:44%}
+.av-frame .thirds{position:absolute;inset:0;background:
+  linear-gradient(90deg,transparent calc(33.33% - .5px),rgba(200,169,106,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(200,169,106,.35) 66.66%,transparent calc(66.66% + .5px)),
+  linear-gradient(transparent calc(33.33% - .5px),rgba(200,169,106,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(200,169,106,.35) 66.66%,transparent calc(66.66% + .5px))}
+.lower{position:absolute;left:5%;bottom:9%;display:flex;align-items:stretch;background:rgba(14,16,19,.88);border-radius:3px;overflow:hidden;backdrop-filter:blur(6px)}
+.lower .bar{width:4px;background:var(--champagne)}
+.lower .t{padding:8px 14px}
+.lower b{display:block;font-family:var(--display);font-size:clamp(11px,1.5vw,17px)}
+.lower span{font-family:var(--mono);font-size:clamp(8px,.9vw,11px);color:var(--muted)}
+.disclose{position:absolute;right:4%;top:6%;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:clamp(8px,.9vw,11px);padding:5px 9px;border:1px solid rgba(242,241,237,.25);border-radius:99px;color:var(--paper);background:rgba(14,16,19,.6)}
+.disclose i{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(61,107,255,.25)}
+.wear{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.wear span{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.wear i{width:22px;height:22px;border-radius:50%;border:1px solid var(--line)}
+
+/* Arquitetura */
+.arch{display:grid;gap:16px}
+.arch .mother{display:flex;align-items:center;gap:14px;font-size:44px;padding:24px;border:1px solid var(--champagne);border-radius:6px;background:var(--graphite);flex-wrap:wrap}
+.arch .mother p{font-size:14px;color:var(--muted);max-width:52ch}
+.arch .subs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.arch .sub{padding:16px;border:1px solid var(--line);border-radius:6px;font-size:13px;min-width:0}
+.arch .sub .lock{font-size:26px;margin-bottom:8px}
+.arch .sub .lock .wm{font-size:.55em}
+.arch .sub em{font-style:normal;font-family:var(--display);font-weight:300;letter-spacing:.02em;font-size:.6em;color:var(--champagne);margin-left:.1em}
+
+footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mist);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero-grid,.ch-head,.concept,.site .s-hero,.lms,.social,.vt,.avatar-sys,.type-spec{grid-template-columns:1fr}
+  .hero-mark{justify-self:start;font-size:120px}
+  .cols-3,.cols-4,.covers,.posts,.arch .subs,.schools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lms aside{border-right:0;border-bottom:1px solid var(--line)}
+  .schools div:nth-child(2){border-right:0}
+}
+@media (max-width:560px){
+  .cols-2,.cols-3,.cols-4,.covers,.posts,.thumbs,.slides,.arch .subs,.proscons{grid-template-columns:1fr}
+  .ch{padding-block:60px}
+  .board{padding:20px}
+  .site nav .links{display:none}
+  .site nav,.site .s-hero{padding-left:18px;padding-right:18px}
+  .phone{margin:0 auto}
+}
+</style>
+
+<svg class="svgdefs" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- PRAXIA: haste (fundamento) + vetor ascendente (aplicação). Grade 64, espessura 12. -->
+    <symbol id="px" viewBox="0 0 64 64">
+      <rect class="stem" x="8" y="8" width="12" height="48" fill="var(--sa, currentColor)"/>
+      <path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="var(--sb, #C8A96A)"/>
+    </symbol>
+    <!-- VÉRTICE: duas hastes desiguais convergindo num ponto -->
+    <symbol id="vx" viewBox="0 0 64 64">
+      <path d="M6 10H18L35 52H23Z" fill="var(--sa, currentColor)"/>
+      <path d="M46 22H58L41 52H35Z" fill="var(--sb, #C8A96A)"/>
+      <rect x="46" y="8" width="10" height="10" fill="var(--sb, #C8A96A)"/>
+    </symbol>
+    <!-- STRATA: camadas de conhecimento que sobem -->
+    <symbol id="st" viewBox="0 0 64 64">
+      <rect x="6" y="42" width="34" height="10" fill="var(--sa, currentColor)"/>
+      <rect x="15" y="27" width="34" height="10" fill="var(--sa, currentColor)" opacity=".7"/>
+      <rect x="24" y="12" width="34" height="10" fill="var(--sb, #C8A96A)"/>
+    </symbol>
+    <!-- Silhueta neutra do apresentador (placeholder do avatar) -->
+    <symbol id="host" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3F48"/><stop offset="1" stop-color="#1E2228"/></linearGradient>
+      </defs>
+      <ellipse cx="100" cy="70" rx="38" ry="46" fill="url(#hg)"/>
+      <path d="M20 240C20 172 54 140 100 140C146 140 180 172 180 240Z" fill="url(#hg)"/>
+      <path d="M84 140L100 176L116 140" fill="#0E1013"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="lbl">Manual de identidade · v1.0 · nov 2026</span>
+        <h1>Conhecimento <em>em prática.</em></h1>
+        <p class="lede">Plataforma de marca, três conceitos, sistema de identidade completo e aplicações para uma empresa de educação digital que usa inteligência artificial para escalar o ensino de especialistas reais.</p>
+        <div class="meta-row">
+          <div><b>Marca recomendada</b>Praxia</div>
+          <div><b>Categoria</b>Educação profissional digital</div>
+          <div><b>Status</b>Proposta para validação</div>
+        </div>
+      </div>
+      <svg class="sym hero-mark" role="img" aria-label="Símbolo Praxia"><use href="#px"/></svg>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Capítulos">
+    <a href="#diagnostico">Diagnóstico</a><a href="#plataforma">Plataforma</a><a href="#conceitos">Conceitos</a><a href="#logo">Logotipo</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#aplicacoes">Aplicações</a><a href="#vinheta">Vinheta</a><a href="#avatar">Avatar</a><a href="#expansao">Expansão</a>
+  </nav>
+</div>
+
+<main>
+
+<!-- DIAGNÓSTICO -->
+<section class="ch" id="diagnostico"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 1 · Diagnóstico</span>
+    <div>
+      <h2>Antes do logotipo: quatro decisões que o briefing não resolve</h2>
+      <p>Uma identidade bonita não corrige um posicionamento ambíguo. Estes pontos definem como a marca foi construída.</p>
+    </div>
+  </div>
+  <div class="ch-body cols-2">
+    <div class="board risk"><span class="tag hi">Crítico</span><div><h3>Rosto do fundador × empresa de vários especialistas</h3><p class="muted">Se o avatar do fundador é a cara de todos os cursos, a marca vira marca pessoal e trava a entrada de outros especialistas. Solução adotada: a empresa é a marca-mãe; o fundador é o primeiro <b>apresentador</b> do sistema, não o sistema. Cada especialista futuro ganha o próprio avatar dentro do mesmo enquadramento.</p></div></div>
+    <div class="board risk"><span class="tag hi">Crítico</span><div><h3>Transparência sobre o avatar</h3><p class="muted">Esconder que a aula é apresentada por avatar é o caminho mais rápido para a percepção de "vídeo de IA" que você quer evitar. A marca assume isso com um selo próprio ("Apresentação digital do especialista"): transforma um risco de confiança em diferencial de método. Verifique as regras do CONAR e das plataformas sobre conteúdo sintético.</p></div></div>
+    <div class="board risk"><span class="tag">Alto</span><div><h3>Sete nichos no lançamento diluem autoridade</h3><p class="muted">Credibilidade se constrói por profundidade. A arquitetura abaixo comporta todos os segmentos, mas o lançamento deve focar em uma ou duas escolas (sugestão: Negócios Imobiliários, onde está sua experiência, e IA Aplicada) e expandir depois de provar resultado.</p></div></div>
+    <div class="board risk"><span class="tag">Alto</span><div><h3>Nome sem validação jurídica</h3><p class="muted">O briefing não trazia nome. Propus três. Antes de produzir qualquer peça: busca no INPI (classes 41 e 9), domínio .com.br/.com e @ nas redes. Nome sem registro é ativo que não é seu.</p></div></div>
+  </div>
+</div></section>
+
+<!-- PLATAFORMA -->
+<section class="ch" id="plataforma"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 2 · Plataforma de marca</span>
+    <div><h2>O que a marca defende</h2><p>A tecnologia é o meio de produção. O produto é o conhecimento de quem já fez, organizado para gerar resultado.</p></div>
+  </div>
+  <div class="ch-body">
+    <p class="statement">Transformamos <b>experiência profissional</b> em formação aplicável, com a escala da inteligência artificial e o critério de quem já fez.</p>
+    <div class="cols-4">
+      <div class="pillar"><h4>Propósito</h4><p class="muted">Encurtar a distância entre saber e fazer.</p></div>
+      <div class="pillar"><h4>Promessa</h4><p class="muted">Cada curso termina em uma entrega prática, não em um certificado vazio.</p></div>
+      <div class="pillar"><h4>Diferencial</h4><p class="muted">Especialistas reais, produção com IA, atualização contínua dos conteúdos.</p></div>
+      <div class="pillar"><h4>Público</h4><p class="muted">Profissionais de 25 a 50 anos que querem resultado mensurável na carreira ou no negócio.</p></div>
+    </div>
+    <div class="cols-2">
+      <div class="board">
+        <h3>Personalidade</h3>
+        <p class="muted">Arquétipo principal <b style="color:var(--paper)">Sábio</b> (autoridade, clareza) com traço de <b style="color:var(--paper)">Criador</b> (método, construção). A marca fala como um mentor sênior: direto, preciso, generoso com o conhecimento, sem arrogância.</p>
+        <ul><li>É estratégica, nunca fria.</li><li>É tecnológica, nunca futurista de ficção.</li><li>É premium, nunca ostentatória.</li><li>É acessível, nunca informal demais.</li></ul>
+      </div>
+      <div class="board">
+        <h3>Assinaturas</h3>
+        <p><span class="lbl">Principal</span><br><span style="font-family:var(--display);font-size:22px">Conhecimento em prática.</span></p>
+        <p><span class="lbl">Campanha</span><br><span style="font-family:var(--display);font-size:18px">Quem já fez, ensinando quem vai fazer.</span></p>
+        <p><span class="lbl">Institucional</span><br><span style="font-family:var(--display);font-size:18px">Educação profissional, escalada por IA.</span></p>
+      </div>
+    </div>
+    <div class="board scroll-x">
+      <h3>Tom de voz</h3>
+      <table class="voice">
+        <thead><tr><th>Atributo</th><th>Escrevemos assim</th><th>Evitamos</th></tr></thead>
+        <tbody>
+          <tr><td>Preciso</td><td>"Em 6 aulas você monta seu funil de captação de proprietários."</td><td>"Transforme sua vida com o método definitivo!"</td></tr>
+          <tr><td>Estratégico</td><td>"O que muda no seu resultado e por quê."</td><td>Listas de dicas soltas sem contexto.</td></tr>
+          <tr><td>Transparente</td><td>"Esta aula é apresentada pelo avatar digital do especialista."</td><td>Esconder ou negar o uso de IA.</td></tr>
+          <tr><td>Acessível</td><td>Termos técnicos explicados na primeira ocorrência.</td><td>Jargão para parecer sofisticado.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONCEITOS -->
+<section class="ch" id="conceitos"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 3 · Três conceitos</span>
+    <div><h2>Três caminhos, uma recomendação</h2><p>Cada conceito traz nome, símbolo e uma leitura estratégica diferente. Todos evitam robôs, cérebros, lâmpadas e capelos.</p></div>
+  </div>
+  <div class="ch-body">
+
+    <article class="concept">
+      <div class="stage"><span class="lock big-lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div>
+      <div class="info">
+        <span class="chip">Conceito A · Recomendado</span>
+        <h3>Praxia</h3>
+        <p class="muted">De <i>práxis</i>, o conhecimento convertido em ação. Nome inventado, curto, pronunciável em português, inglês e espanhol, com maior chance de registro.</p>
+        <p class="muted"><b style="color:var(--paper)">Símbolo "Vetor":</b> uma haste vertical (o fundamento, a experiência acumulada) e um vetor que sobe na diagonal (a aplicação, a evolução). Juntos formam um P abstrato. Monocromático ou em duas cores, funciona de 16 px a fachada.</p>
+        <div class="proscons"><div><h4>Força</h4><ul><li>Traduz a promessa em forma</li><li>Ícone de app e favicon imediatos</li><li>Nome sem nicho embutido</li></ul></div><div><h4>Atenção</h4><ul><li>Setas são comuns: o rigor geométrico é o que diferencia</li><li>Exige validação no INPI</li></ul></div></div>
+      </div>
+    </article>
+
+    <article class="concept">
+      <div class="stage light"><span class="lock big-lock" style="--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#vx"/></svg><span class="wm-v" style="font-size:.5em">vértice</span></span></div>
+      <div class="info">
+        <span class="chip alt">Conceito B</span>
+        <h3>Vértice</h3>
+        <p class="muted">O ponto onde duas linhas se encontram: experiência humana e tecnologia convergindo num resultado. Monograma V com hastes desiguais e um ponto de sinal.</p>
+        <p class="muted">Leitura mais editorial e institucional, próxima de escolas de negócio. Tipografia leve em caixa baixa.</p>
+        <div class="proscons"><div><h4>Força</h4><ul><li>Palavra com significado imediato</li><li>Tom de escola de negócios</li></ul></div><div><h4>Atenção</h4><ul><li>Nome muito usado no Brasil: registro difícil</li><li>Menos personalidade tecnológica</li></ul></div></div>
+      </div>
+    </article>
+
+    <article class="concept">
+      <div class="stage"><span class="lock big-lock"><svg class="sym"><use href="#st"/></svg><span class="wm-s" style="font-size:.44em">STRATA</span></span></div>
+      <div class="info">
+        <span class="chip alt">Conceito C</span>
+        <h3>Strata</h3>
+        <p class="muted">Camadas. Conhecimento se acumula em estratos e cada curso é um degrau acima. O símbolo de três barras escalonadas vira sistema: cada escola pode ganhar uma camada própria.</p>
+        <p class="muted">Mais modular e "plataforma", ótimo para uma marca de assinatura com trilhas.</p>
+        <div class="proscons"><div><h4>Força</h4><ul><li>Sistema modular natural</li><li>Leitura internacional</li></ul></div><div><h4>Atenção</h4><ul><li>Símbolo pode lembrar ícone de "camadas" de software</li><li>Menos calor humano</li></ul></div></div>
+      </div>
+    </article>
+
+    <div class="board">
+      <h3>Por que Praxia</h3>
+      <p class="muted">É o único dos três em que o nome, o símbolo e a promessa dizem a mesma coisa: conhecimento aplicado. O nome não carrega nicho (serve para imobiliário e para IA), não menciona tecnologia (não envelhece quando IA virar commodity) e é registrável. O restante deste manual desenvolve Praxia.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- LOGO -->
+<section class="ch" id="logo"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 4 · Logotipo</span>
+    <div><h2>Sistema de assinaturas</h2><p>Símbolo em grade de 64 unidades, espessura única de 12. Logotipo em Sora Semibold, caixa alta, espaçamento de 160. A seta é sempre champanhe ou acompanha a cor monocromática; nunca recebe outra cor.</p></div>
+  </div>
+  <div class="ch-body">
+    <div class="cols-3">
+      <div class="tile"><div class="art on-ink"><span class="lock" style="font-size:64px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Principal · horizontal · fundo grafite</div></div>
+      <div class="tile"><div class="art on-paper"><span class="lock" style="font-size:64px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Principal · fundo claro (seta em bronze)</div></div>
+      <div class="tile"><div class="art on-graph"><div style="display:grid;justify-items:center;gap:14px"><svg class="sym" style="font-size:72px"><use href="#px"/></svg><span class="wm" style="font-size:24px">PRAXIA</span></div></div><div class="cap">Vertical · perfis e capas</div></div>
+      <div class="tile"><div class="art on-ink"><svg class="sym" style="font-size:96px"><use href="#px"/></svg></div><div class="cap">Símbolo isolado · avatar, app, favicon</div></div>
+      <div class="tile"><div class="art on-ink mono-paper"><span class="lock" style="font-size:52px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Monocromática negativa</div></div>
+      <div class="tile"><div class="art on-champ"><span class="lock" style="font-size:52px;--sa:#0E1013"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></div><div class="cap">Monocromática sobre champanhe</div></div>
+    </div>
+    <div class="cols-2">
+      <div class="board">
+        <h3>Área de proteção e redução</h3>
+        <p class="muted">A margem mínima ao redor da assinatura é <b style="color:var(--paper)">x</b> = espessura da haste (12/64 da altura do símbolo). Tamanho mínimo: símbolo 16 px / 5 mm; assinatura horizontal 96 px / 24 mm.</p>
+        <div style="margin-top:22px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+          <span class="clear"><span class="lock" style="font-size:44px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span></span>
+          <span style="display:flex;gap:14px;align-items:end;color:var(--paper)"><svg class="sym" style="font-size:16px"><use href="#px"/></svg><svg class="sym" style="font-size:24px"><use href="#px"/></svg><svg class="sym" style="font-size:32px"><use href="#px"/></svg></span>
+        </div>
+      </div>
+      <div class="board">
+        <h3>Usos incorretos</h3>
+        <div class="cols-3" style="gap:12px;margin-top:14px">
+          <div class="tile dont" style="min-height:110px"><div class="art on-ink" style="padding:20px"><svg class="sym" style="font-size:44px;transform:rotate(-20deg)"><use href="#px"/></svg></div><div class="cap">Rotacionar</div></div>
+          <div class="tile dont" style="min-height:110px"><div class="art on-ink" style="padding:20px"><svg class="sym" style="font-size:44px;--sb:#E5484D"><use href="#px"/></svg></div><div class="cap">Trocar a cor</div></div>
+          <div class="tile dont" style="min-height:110px"><div class="art on-ink" style="padding:20px"><svg class="sym" style="font-size:44px;transform:scaleX(1.5)"><use href="#px"/></svg></div><div class="cap">Distorcer</div></div>
+        </div>
+        <p class="muted" style="margin-top:14px">Também não aplicar sombra, contorno, gradiente na seta ou sobre fotos sem contraste.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CORES -->
+<section class="ch" id="cores"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 5 · Paleta</span>
+    <div><h2>Grafite, papel e um metal discreto</h2><p>O champanhe é usado como sinal de valor, não como decoração. O azul elétrico aparece só onde há interação ou tecnologia em funcionamento. Clique no código para copiar.</p></div>
+  </div>
+  <div class="ch-body">
+    <div class="cols-4" id="swatches"></div>
+    <div class="board">
+      <h3>Proporção de uso</h3>
+      <div class="ratio" style="margin-top:12px">
+        <div style="flex:55;background:#0E1013;color:#F2F1ED">Grafite 55%</div>
+        <div style="flex:25;background:#F2F1ED;color:#0E1013">Papel 25%</div>
+        <div style="flex:12;background:#23272E;color:#F2F1ED">Ardósia 12%</div>
+        <div style="flex:6;background:#C8A96A;color:#0E1013">6%</div>
+        <div style="flex:2;background:#3D6BFF"></div>
+      </div>
+      <p class="muted" style="margin-top:12px">Contraste: papel sobre grafite 16,9:1; champanhe sobre grafite 8,5:1 (AAA para texto). Bronze sobre papel tem 3,5:1: use só em elementos gráficos e textos de 24 px ou mais (18 px em negrito).</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- TIPOGRAFIA -->
+<section class="ch" id="tipografia"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 6 · Tipografia</span>
+    <div><h2>Geometria para títulos, engenharia para leitura</h2><p>Três famílias gratuitas no Google Fonts, com licença aberta para web, vídeo, impressos e plataformas de curso.</p></div>
+  </div>
+  <div class="ch-body">
+    <div class="type-spec"><div class="sample" style="font-family:var(--display);font-weight:600">Sora Aa 0123</div><div><span class="lbl">Principal · títulos e logotipo</span><p class="muted" style="margin-top:8px">Geométrica, com contraste baixo e olho aberto. Light 300 para frases de impacto, Semibold 600 para títulos.</p></div></div>
+    <div class="type-spec"><div class="sample" style="font-family:var(--body);font-weight:400">IBM Plex Sans Aa</div><div><span class="lbl">Secundária · textos e interface</span><p class="muted" style="margin-top:8px">Desenhada para legibilidade técnica em tela. Regular 400 e Medium 500 para textos, materiais didáticos e plataforma.</p></div></div>
+    <div class="type-spec"><div class="sample" style="font-family:var(--mono);font-weight:400;font-size:clamp(30px,4.6vw,56px)">JetBrains Mono</div><div><span class="lbl">Apoio · rótulos e dados</span><p class="muted" style="margin-top:8px">Códigos de curso, rótulos, numeração de módulos e dados. Sempre em caixa alta e com espaçamento.</p></div></div>
+    <div class="board scale">
+      <h3>Escala (base 16, razão 1,333)</h3>
+      <div class="row"><code>Display 68</code><span style="font-family:var(--display);font-size:clamp(34px,5vw,68px);font-weight:300;letter-spacing:-.03em;line-height:1.05">Saber é começar.</span></div>
+      <div class="row"><code>H1 51</code><span style="font-family:var(--display);font-size:clamp(28px,4vw,51px);font-weight:600;letter-spacing:-.02em;line-height:1.1">Liderança aplicada</span></div>
+      <div class="row"><code>H2 38</code><span style="font-family:var(--display);font-size:clamp(24px,3vw,38px);font-weight:600">Módulo 3 · Delegação</span></div>
+      <div class="row"><code>H3 28</code><span style="font-family:var(--display);font-size:28px;font-weight:600">Como dar feedback</span></div>
+      <div class="row"><code>Corpo 16</code><span>Texto corrido com 1,6 de entrelinha e até 70 caracteres por linha.</span></div>
+      <div class="row"><code>Rótulo 12</code><span class="lbl">Escola de Vendas · VEN-02</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- APLICAÇÕES -->
+<section class="ch" id="aplicacoes"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 7 · Aplicações</span>
+    <div><h2>A marca em uso</h2><p>Simulações de interface e peças em proporção real. Fotos e o avatar final substituem a silhueta neutra.</p></div>
+  </div>
+  <div class="ch-body" style="gap:64px">
+
+    <div>
+      <div class="mock-cap"><h3>Site institucional</h3><span class="lbl">Desktop · 1440</span></div>
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="url">praxia.com.br</span></div>
+        <div class="site">
+          <nav><span class="lock" style="font-size:30px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="links"><span>Escolas</span><span>Especialistas</span><span>Para empresas</span><span>Método</span></span><span class="btn">Começar</span></nav>
+          <div class="s-hero">
+            <div><span class="lbl">Educação profissional</span><h4 style="margin-top:12px">Quem já fez, ensinando <em>quem vai fazer.</em></h4><p>Cursos criados por especialistas com prática real de mercado e produzidos com inteligência artificial para chegar até você atualizados, objetivos e aplicáveis.</p><div class="actions"><span class="btn">Ver escolas</span><span class="btn ghost">Como funciona</span></div></div>
+            <div class="grid-art"><svg class="sym" style="position:relative;z-index:1"><use href="#px"/></svg></div>
+          </div>
+          <div class="schools">
+            <div><span class="code">IMO</span><b>Negócios Imobiliários</b></div>
+            <div><span class="code">IAA</span><b>IA Aplicada</b></div>
+            <div><span class="code">LID</span><b>Gestão e Liderança</b></div>
+            <div><span class="code">VEN</span><b>Vendas e Negociação</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Plataforma de cursos</h3><span class="lbl">Área do aluno</span></div>
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="url">app.praxia.com.br/imo-01/modulo-3</span></div>
+        <div class="lms">
+          <aside>
+            <span class="lock" style="font-size:24px;margin-bottom:14px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span>
+            <span class="code">IMO-01 · Captação de imóveis</span>
+            <div class="progress" style="margin:8px 0 12px"><span style="width:42%"></span></div>
+            <div class="mod done"><span>1. Mercado e posicionamento</span><span>✓</span></div>
+            <div class="mod done"><span>2. Prospecção de proprietários</span><span>✓</span></div>
+            <div class="mod on"><span>3. Avaliação e precificação</span><span>12:40</span></div>
+            <div class="mod"><span>4. Contrato de exclusividade</span><span>18:05</span></div>
+            <div class="mod"><span>5. Anúncio que converte</span><span>15:22</span></div>
+            <div class="mod"><span>6. Projeto final</span><span>Entrega</span></div>
+          </aside>
+          <main>
+            <div class="player">
+              <div class="ttl"><small class="lbl">Módulo 3 · Aula 2</small><strong>Como precificar sem perder o cliente</strong></div>
+              <svg class="av"><use href="#host"/></svg>
+              <span class="disclose"><i></i>Apresentação digital do especialista</span>
+              <div class="ctrl"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><div><h4 style="font-size:18px">Avaliação e precificação</h4><p class="muted" style="font-size:13px">Material de apoio: planilha de comparativos (XLSX) · roteiro de visita (PDF)</p></div><span class="btn">Concluir aula</span></div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Capas de curso</h3><span class="lbl">4:5 · vitrine e anúncios</span></div>
+      <div class="covers">
+        <div class="cover on-ink" style="border:1px solid var(--line)"><svg class="sym big"><use href="#px"/></svg><span class="code">IMO-01 · Escola de Negócios Imobiliários</span><h4>Captação de imóveis com exclusividade</h4><div class="foot"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="muted">6 módulos</span></div></div>
+        <div class="cover on-paper"><svg class="sym big" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg><span class="code" style="color:var(--bronze)">LID-01 · Escola de Liderança</span><h4>Liderança aplicada para novos gestores</h4><div class="foot"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span style="color:#5A5F67">8 módulos</span></div></div>
+        <div class="cover" style="background:linear-gradient(160deg,#16213F,#0E1013 70%);border:1px solid var(--line)"><svg class="sym big" style="--sb:#3D6BFF"><use href="#px"/></svg><span class="code" style="color:#9DB4FF">IAA-01 · Escola de IA Aplicada</span><h4>Automação com IA para pequenos negócios</h4><div class="foot"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="muted">5 módulos</span></div></div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">A Escola de IA é a única que usa azul elétrico no fundo, como código de categoria. O símbolo da marca permanece champanhe.</p>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Miniaturas para YouTube</h3><span class="lbl">16:9 · 1280×720</span></div>
+      <div class="thumbs">
+        <div class="thumb"><div class="txt"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><strong>O erro que <em>trava</em> sua captação</strong><span class="ep">IMO · EP. 14</span></div><svg class="av"><use href="#host"/></svg><span class="dur">12:48</span></div>
+        <div class="thumb" style="background:var(--paper);color:var(--ink)"><div class="txt"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><strong>3 automações de IA <em style="color:var(--bronze)">em 20 minutos</em></strong><span class="ep" style="color:#5A5F67">IAA · EP. 03</span></div><svg class="av"><use href="#host"/></svg><span class="dur">19:02</span></div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">Regra: no máximo seis palavras, uma em destaque, rosto sempre à direita, símbolo no canto superior esquerdo.</p>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Instagram, posts e stories</h3><span class="lbl">Perfil · 1:1 · 9:16</span></div>
+      <div class="social">
+        <div class="phone">
+          <div class="ig-head"><div class="ig-av"><svg class="sym"><use href="#px"/></svg></div><div class="ig-stats"><div><b>128</b>posts</div><div><b>—</b>seguidores</div><div><b>12</b>seguindo</div></div></div>
+          <div class="ig-bio"><b>Praxia</b><br>Educação profissional com quem já fez.<br>Escolas de Imobiliário, IA, Liderança e Vendas.<br><span style="color:#9DB4FF">praxia.com.br</span></div>
+          <div class="ig-hl"><div><span>IMO</span>Imobiliário</div><div><span>IAA</span>IA</div><div><span>LID</span>Liderança</div><div><span>?</span>Método</div></div>
+          <div class="ig-grid">
+            <div style="background:#0E1013;color:#F2F1ED">Saber não é fazer.</div>
+            <div style="background:#C8A96A;color:#0E1013">IMO-01 aberto</div>
+            <div style="background:#F2F1ED;color:#0E1013">5 erros de precificação</div>
+            <div style="background:#23272E;color:#F2F1ED">Aula grátis</div>
+            <div style="background:#0E1013;color:#C8A96A">"Quem já fez"</div>
+            <div style="background:#16213F;color:#F2F1ED">IA para corretores</div>
+            <div style="background:#F2F1ED;color:#0E1013">Liderança em 1 slide</div>
+            <div style="background:#0E1013;color:#F2F1ED">Bastidores do avatar</div>
+            <div style="background:#C8A96A;color:#0E1013">Turma nova</div>
+          </div>
+        </div>
+        <div class="posts">
+          <div class="post on-ink" style="border:1px solid var(--line)"><span class="code">Ideia · LID</span><h4>Delegar não é se livrar de tarefas. É multiplicar decisões.</h4><div class="foot"><span class="lock" style="font-size:18px;font-family:var(--display)"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="muted">01/06</span></div></div>
+          <div class="post on-champ"><span class="code" style="color:var(--ink)">Lançamento</span><h4>Captação de imóveis com exclusividade. Turma aberta.</h4><div class="foot"><span class="lock" style="font-size:18px;--sa:#0E1013;font-family:var(--display)"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span>IMO-01</span></div></div>
+          <div class="post story on-graph" style="border:1px solid var(--line)"><span class="lock" style="font-size:18px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><div><span class="code">Enquete</span><h4 style="margin-top:10px">Você precifica pelo mercado ou pelo proprietário?</h4><div style="display:grid;gap:8px;margin-top:16px;font-size:13px"><span class="btn ghost" style="text-align:center">Pelo mercado</span><span class="btn ghost" style="text-align:center">Pelo proprietário</span></div></div><div class="foot"><span class="muted">Story · 9:16</span></div></div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">Três famílias de template: Ideia (fundo grafite, frase forte), Lançamento (champanhe, produto) e Interação (ardósia, enquete ou pergunta). A grade alterna as três para manter ritmo visual.</p>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Certificado de conclusão</h3><span class="lbl">A4 paisagem · PDF</span></div>
+      <div class="cert">
+        <svg class="sym wmark"><use href="#px"/></svg>
+        <div class="top"><span class="lock" style="--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span class="lbl">Certificado · IMO-01-2026-00412</span></div>
+        <div class="mid"><small>Certificamos que</small><h4>Nome do Aluno</h4><p>concluiu o curso <b>Captação de imóveis com exclusividade</b>, da Escola de Negócios Imobiliários, com carga horária de 12 horas e entrega do projeto prático final.</p></div>
+        <div class="bot"><div class="sig">Especialista responsável</div><div class="sig">Direção acadêmica Praxia</div><div class="seal"><svg class="sym" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg></div></div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">O código do certificado permite validação pública em praxia.com.br/validar. É o detalhe que dá credibilidade ao documento.</p>
+    </div>
+
+    <div>
+      <div class="mock-cap"><h3>Apresentações e material didático</h3><span class="lbl">16:9</span></div>
+      <div class="slides">
+        <div class="slide on-ink"><span class="lock" style="font-size:20px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><div><span class="code">IMO-01 · Módulo 3</span><h4 style="margin-top:10px">Avaliação e precificação</h4></div><div class="foot"><span>Escola de Negócios Imobiliários</span><span>03</span></div></div>
+        <div class="slide on-paper" style="border-color:var(--paper-2)"><span class="code" style="color:var(--bronze)">Os três números que definem o preço</span><div class="pts" style="color:#3A3F47"><div><b style="color:var(--bronze)">m²</b>Valor médio do metro quadrado na microrregião</div><div><b style="color:var(--bronze)">DOM</b>Dias em mercado dos comparáveis</div><div><b style="color:var(--bronze)">Δ%</b>Desconto médio entre anúncio e venda</div></div><div class="foot" style="color:#6A6F78"><span class="lock" style="font-size:14px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span>07</span></div></div>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:14px">Slides de abertura de módulo em grafite; slides de conteúdo em papel, que leem melhor em vídeo comprimido e em impressão.</p>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- VINHETA -->
+<section class="ch" id="vinheta"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 8 · Vinheta</span>
+    <div><h2>Abertura e encerramento</h2><p>Três segundos. A haste sobe (fundamento), o vetor entra na diagonal (aplicação), o nome assenta. Som: um único pulso grave com resolução em nota limpa; nada de "whoosh" tecnológico.</p></div>
+  </div>
+  <div class="ch-body vt">
+    <div class="vt-stage play" id="vt">
+      <div class="gridbg"></div>
+      <div class="vt-lock"><svg class="sym" viewBox="0 0 64 64" aria-label="Símbolo Praxia"><rect class="stem" x="8" y="8" width="12" height="48" fill="#F2F1ED"/><path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="#C8A96A"/></svg><span class="wm">PRAXIA</span></div>
+      <div class="vt-sub">Conhecimento em prática</div>
+      <button class="replay" id="replay" type="button">Repetir</button>
+    </div>
+    <div class="board timeline">
+      <h3>Roteiro de abertura</h3>
+      <div class="step"><code>0,0 s</code><span>Grafite com grade sutil surgindo.</span></div>
+      <div class="step"><code>0,2 s</code><span>Haste sobe de baixo para cima, em papel.</span></div>
+      <div class="step"><code>0,7 s</code><span>Vetor champanhe entra na diagonal e trava no lugar. Pulso sonoro.</span></div>
+      <div class="step"><code>1,1 s</code><span>PRAXIA assenta, espaçamento fecha de 600 para 160.</span></div>
+      <div class="step"><code>1,8 s</code><span>Assinatura "Conhecimento em prática".</span></div>
+      <div class="step"><code>3,0 s</code><span>Corte para código do curso e título da aula.</span></div>
+      <p class="muted" style="margin-top:14px;font-size:14px"><b style="color:var(--paper)">Encerramento (5 s):</b> processo inverso, vetor sai para cima-direita, entra cartela com próximo passo ("Próxima aula: Contrato de exclusividade") e selo de apresentação digital.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- AVATAR -->
+<section class="ch" id="avatar"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 9 · Avatar digital</span>
+    <div><h2>O apresentador como parte do sistema</h2><p>O avatar não é a marca. É o apresentador. Tem regras de enquadramento, figurino, cenário e identificação iguais para o fundador e para qualquer especialista que entrar depois.</p></div>
+  </div>
+  <div class="ch-body avatar-sys">
+    <div class="av-frame">
+      <div class="thirds"></div>
+      <svg class="av"><use href="#host"/></svg>
+      <span class="disclose"><i></i>Apresentação digital do especialista</span>
+      <div class="lower"><div class="bar"></div><div class="t"><b>Nome do Especialista</b><span>Fundador · 15 anos em negócios imobiliários</span></div></div>
+    </div>
+    <div class="board">
+      <h3>Regras do apresentador</h3>
+      <ul>
+        <li><b style="color:var(--paper)">Enquadramento:</b> plano médio, olhos na linha superior dos terços, ombros visíveis. Em aulas com tela, avatar à direita em 35% da largura.</li>
+        <li><b style="color:var(--paper)">Cenário:</b> grafite com gradiente suave e profundidade; nunca estúdio falso, estante de livros genérica ou cenário futurista.</li>
+        <li><b style="color:var(--paper)">Luz:</b> chave quente lateral (3200 K) e recorte frio discreto, que ecoa champanhe e azul.</li>
+        <li><b style="color:var(--paper)">Identificação:</b> lower third com barra champanhe na primeira aparição de cada aula.</li>
+        <li><b style="color:var(--paper)">Selo:</b> "Apresentação digital do especialista" sempre visível nos primeiros 10 s e na thumbnail da plataforma.</li>
+        <li><b style="color:var(--paper)">Voz:</b> ritmo de mentor, pausas reais, sem entonação de locutor.</li>
+      </ul>
+      <h3 style="margin-top:20px">Figurino</h3>
+      <div class="wear">
+        <span><i style="background:#0E1013"></i>Grafite</span><span><i style="background:#2A2E35"></i>Ardósia</span><span><i style="background:#F2F1ED"></i>Off-white</span><span><i style="background:#6B5A43"></i>Caramelo</span>
+      </div>
+      <p class="muted" style="margin-top:10px;font-size:14px">Tecidos lisos. Evite listras finas e estampas: geram artefatos no avatar. Sem logotipo na roupa.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- EXPANSÃO -->
+<section class="ch" id="expansao"><div class="wrap">
+  <div class="ch-head">
+    <span class="lbl">Cap. 10 · Expansão</span>
+    <div><h2>Arquitetura para crescer sem fragmentar</h2><p>Marca monolítica: tudo é Praxia, com descritores. Escolas, especialistas e produtos B2B herdam o sistema sem criar marcas novas.</p></div>
+  </div>
+  <div class="ch-body">
+    <div class="arch">
+      <div class="mother"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><p>Marca-mãe. Concentra reputação, certificação e relacionamento. Nunca é substituída por marca de curso ou de especialista.</p></div>
+      <div class="subs">
+        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Escolas</em></span><p class="muted">Imobiliário, IA Aplicada, Liderança, Vendas, Marketing, Negócios, Carreira. Código de três letras.</p></div>
+        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Faculty</em></span><p class="muted">Rede de especialistas convidados, cada um com avatar próprio no padrão do capítulo 9.</p></div>
+        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Empresas</em></span><p class="muted">Trilhas corporativas e treinamento de equipes. Mesmo sistema, materiais em papel.</p></div>
+        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span><em>Lab</em></span><p class="muted">Conteúdo e ferramentas de IA. Único submarca com azul elétrico como cor de apoio.</p></div>
+      </div>
+    </div>
+    <div class="cols-3">
+      <div class="board"><h3>Novos cursos</h3><p class="muted">Código ESCOLA-NN, capa no template 4:5, o símbolo grande recortado no canto. Nenhum curso recebe logotipo próprio.</p></div>
+      <div class="board"><h3>Novos especialistas</h3><p class="muted">Lower third, selo de apresentação digital e figurino padrão. A assinatura é sempre "Especialista Praxia", não marca pessoal paralela.</p></div>
+      <div class="board"><h3>Novos mercados</h3><p class="muted">O nome funciona em espanhol e inglês sem adaptação. Para expansão, reserve praxia.com e @praxia nas redes desde já, se disponíveis.</p></div>
+    </div>
+    <div class="board">
+      <h3>Próximos passos</h3>
+      <ul>
+        <li>Validar nome no INPI (classes 41 e 9), domínio e redes.</li>
+        <li>Refinar o símbolo em vetor com ajuste óptico (a ponta da seta precisa de compensação em tamanhos pequenos).</li>
+        <li>Gravar o material-base do avatar já com figurino e luz deste manual.</li>
+        <li>Produzir a vinheta em motion (After Effects ou HyperFrames) a partir do roteiro do capítulo 8.</li>
+        <li>Lançar com duas escolas, medir conclusão e resultado dos alunos, só então abrir as demais.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<div class="wrap"><footer><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm">PRAXIA</span></span><span>Manual de identidade · proposta v1.0 · nome sujeito a validação</span></footer></div>
+
+<script>
+(function(){
+  var colors=[
+    ["Grafite Profundo","#0E1013","14 16 19","Fundo principal, texto em claro",'#F2F1ED'],
+    ["Ardósia","#23272E","35 39 46","Superfícies, cartões, interface",'#F2F1ED'],
+    ["Papel","#F2F1ED","242 241 237","Fundo claro, materiais, certificado",'#0E1013'],
+    ["Névoa","#8A9099","138 144 153","Textos de apoio, linhas",'#0E1013'],
+    ["Champanhe","#C8A96A","200 169 106","Símbolo, destaques, CTA",'#0E1013'],
+    ["Bronze","#9C7A45","156 122 69","Champanhe em fundos claros",'#F2F1ED'],
+    ["Azul Sinal","#3D6BFF","61 107 255","Interação, links, Escola de IA",'#F2F1ED'],
+    ["Grafite Médio","#16191E","22 25 30","Fundo secundário",'#F2F1ED']
+  ];
+  var box=document.getElementById('swatches');
+  colors.forEach(function(c){
+    var d=document.createElement('div');d.className='swatch';
+    d.innerHTML='<div class="chipc" style="background:'+c[1]+';color:'+c[4]+'">'+c[1]+'</div><div class="sw-info"><b>'+c[0]+'</b><button class="copy" type="button">'+c[1]+'</button><br><code>RGB '+c[2]+'</code><p class="muted" style="margin-top:6px">'+c[3]+'</p></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener('click',function(e){
+    var b=e.target.closest('.copy');if(!b)return;var v=b.textContent;
+    var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent=v},1200)};
+    try{navigator.clipboard.writeText(v).then(done,function(){selectText(b)})}catch(err){selectText(b)}
+  });
+  function selectText(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  var vt=document.getElementById('vt');
+  document.getElementById('replay').addEventListener('click',function(){vt.classList.remove('play');void vt.offsetWidth;vt.classList.add('play')});
+})();
+</script>
