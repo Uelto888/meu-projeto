@@ -1,0 +1,107 @@
+<title>Eupraxia Color Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: uma faixa por opção de cor, cada uma com as mesmas quatro peças lado a lado para comparar sem rolar entre páginas. */
+:root{
+  --ink:#0E1013; --graphite:#16191E; --line:#2E333B; --mist:#8A9099; --paper:#F2F1ED; --muted:#A9AEB6;
+  --display:"Sora","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+.svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+.sym{display:inline-block;width:1em;height:1em;flex:none}
+.lock{display:inline-flex;align-items:center;gap:.42em;white-space:nowrap}
+.wm{font-family:var(--display);font-weight:600;letter-spacing:.16em;line-height:1;font-size:.62em}
+.wm .eu{font-weight:300}
+header{padding-block:56px 36px;border-bottom:1px solid var(--line)}
+header h1{font-size:clamp(30px,4.4vw,52px);margin-top:12px}
+header p{margin-top:14px;max-width:66ch;color:var(--muted)}
+.opt{padding-block:44px;border-bottom:1px solid var(--line)}
+.opt-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 22px;margin-bottom:20px}
+.opt-head h2{font-size:26px}
+.opt-head .rec{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--a);color:var(--ink)}
+.opt-head .ref{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chips{display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.chips i{width:16px;height:16px;border-radius:3px;display:inline-block;border:1px solid var(--line)}
+.opt-head .note{flex-basis:100%;color:var(--muted);max-width:80ch;font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr 1.5fr .9fr;gap:14px;align-items:stretch}
+.card{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr auto;min-width:0}
+.card .art{display:grid;place-items:center;padding:24px 12px;min-height:150px}
+.card .cap{padding:8px 12px;font-family:var(--mono);font-size:11px;color:var(--mist);background:var(--ink);border-top:1px solid var(--line)}
+.dark{background:var(--ink);color:var(--paper);--sb:var(--a)}
+.light{background:var(--paper);color:var(--ink);--sa:var(--ink);--sb:var(--al)}
+.thumb{aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;background:var(--ink);--sb:var(--a)}
+.thumb .txt{position:absolute;left:6%;top:10%;bottom:10%;width:58%;display:flex;flex-direction:column;justify-content:space-between}
+.thumb strong{font-family:var(--display);font-weight:700;font-size:clamp(14px,1.9vw,24px);line-height:1.02;text-transform:uppercase;letter-spacing:-.02em}
+.thumb strong em{font-style:normal;color:var(--a)}
+.thumb .ep{font-family:var(--mono);font-size:10px;color:var(--mist)}
+.thumb .host{position:absolute;right:0;bottom:0;height:94%;width:42%}
+.thumb .band{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--a)}
+.cover{aspect-ratio:4/5;max-width:100%;padding:16px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:var(--paper);color:var(--ink);--sa:var(--ink);--sb:var(--al)}
+.cover .big{position:absolute;right:-22%;bottom:-14%;font-size:200px;opacity:.12}
+.cover .code{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--al);position:relative}
+.cover h3{font-size:clamp(15px,1.6vw,19px);letter-spacing:-.02em;position:relative}
+.cover .foot{position:relative;font-size:16px}
+.cover .btn{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:3px;background:var(--al);color:var(--paper);font-family:var(--display);font-weight:600;font-size:11px}
+.verdict{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-block:40px 60px}
+.verdict div{border-top:2px solid var(--a);padding-top:12px;font-size:14px;color:var(--muted);min-width:0}
+.verdict b{display:block;color:var(--paper);font-family:var(--display);font-size:16px;margin-bottom:4px}
+.verdict span{font-family:var(--mono);font-size:12px;color:var(--paper)}
+@media (max-width:900px){.row{grid-template-columns:1fr 1fr}.verdict{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.row,.verdict{grid-template-columns:1fr}.card .art{min-height:120px}}
+</style>
+
+<svg class="svgdefs" aria-hidden="true" focusable="false"><defs>
+  <symbol id="px" viewBox="0 0 64 64"><rect x="8" y="8" width="12" height="48" fill="var(--sa, currentColor)"/><path d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="var(--sb, #C8A96A)"/></symbol>
+  <symbol id="host" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet"><ellipse cx="100" cy="70" rx="38" ry="46" fill="#2B3038"/><path d="M20 240C20 172 54 140 100 140C146 140 180 172 180 240Z" fill="#2B3038"/><path d="M84 140L100 176L116 140" fill="#0E1013"/></symbol>
+</defs></svg>
+
+<header><div class="wrap">
+  <span class="lbl">Eupraxia · estudo de cor</span>
+  <h1>Qual cor de destaque representa a marca?</h1>
+  <p>Grafite e papel ficam fixos. Muda só a cor de destaque, que pinta a seta do símbolo, os destaques de texto e os botões. Cada opção tem dois tons: um claro para fundos escuros e um mais fechado para fundos claros, para manter a leitura nos dois.</p>
+</div></header>
+
+<main class="wrap" id="opts"></main>
+
+<div class="wrap">
+  <h2 style="font-size:22px;margin-top:40px">Contraste do destaque</h2>
+  <p class="lbl" style="margin-top:6px">Sobre grafite / sobre papel · 4,5 é o mínimo para texto pequeno</p>
+  <div class="verdict" id="verdict"></div>
+</div>
+
+<script>
+(function(){
+  var opts=[
+    {n:"Atual · Champanhe",a:"#C8A96A",al:"#9C7A45",ref:true,c:"8,5 / 3,5",note:"Referência. Sofisticado, mas no Brasil o preto com dourado ficou associado a infoprodutos e mentorias caras."},
+    {n:"A · Azul Ultramar",a:"#5B6DFF",al:"#2E46F0",rec:true,c:"4,6 / 5,7",note:"Tecnologia e confiança. O tom intenso foge do azul corporativo comum. No fundo escuro usa a versão mais clara (#5B6DFF), porque o ultramar puro fica com contraste baixo sobre grafite."},
+    {n:"B · Verde Jade",a:"#1FA67A",al:"#12805C",c:"6,2 / 4,4",note:"Crescimento e resultado. Boa leitura no escuro; pode lembrar banco digital."},
+    {n:"C · Cobre",a:"#D07A4E",al:"#A4532C",c:"6,0 / 4,8",note:"Ofício e experiência humana. É o mais caloroso e o menos tecnológico."},
+    {n:"D · Areia",a:"#BDB3A0",al:"#7D7362",c:"9,2 / 4,1",note:"O dourado sem brilho: sofisticado e discreto, mas com pouca energia em miniaturas e anúncios."}
+  ];
+  var lock=function(s){return '<span class="lock" style="font-size:'+s+'px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span>'};
+  var main=document.getElementById('opts'),ver=document.getElementById('verdict');
+  opts.forEach(function(o){
+    var sec=document.createElement('section');sec.className='opt';sec.style.setProperty('--a',o.a);sec.style.setProperty('--al',o.al);
+    sec.innerHTML='<div class="opt-head"><h2>'+o.n+'</h2>'+(o.rec?'<span class="rec">Recomendada</span>':'')+(o.ref?'<span class="ref">Referência</span>':'')+
+      '<span class="chips"><i style="background:'+o.a+'"></i>'+o.a+' <i style="background:'+o.al+'"></i>'+o.al+'</span><p class="note">'+o.note+'</p></div>'+
+      '<div class="row">'+
+      '<div class="card"><div class="art dark">'+lock(38)+'</div><div class="cap">Logotipo · fundo grafite</div></div>'+
+      '<div class="card"><div class="art light">'+lock(38)+'</div><div class="cap">Logotipo · fundo papel</div></div>'+
+      '<div class="card"><div class="thumb"><span class="band"></span><div class="txt">'+lock(18)+'<strong>3 automações de IA <em>em 20 minutos</em></strong><span class="ep">IAA · EP. 03</span></div><svg class="host"><use href="#host"/></svg></div><div class="cap">Miniatura YouTube</div></div>'+
+      '<div class="card"><div class="cover"><svg class="sym big"><use href="#px"/></svg><span class="code">LID-01 · LIDERANÇA</span><div><h3>Liderança aplicada para novos gestores</h3><span class="btn">Ver curso</span></div><span class="foot">'+lock(16)+'</span></div><div class="cap">Capa de curso</div></div>'+
+      '</div>';
+    main.appendChild(sec);
+    var v=document.createElement('div');v.style.setProperty('--a',o.a);v.innerHTML='<b>'+o.n.replace(/^.*· /,'')+'</b><span>'+o.c+'</span>';
+    if(!o.ref) ver.appendChild(v);
+  });
+})();
+</script>
