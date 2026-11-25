@@ -7,7 +7,7 @@
 /* Layout: manual em capítulos sobre fundo grafite; cada capítulo tem uma coluna de rótulo estreita e uma área de prancha larga. */
 :root{
   --ink:#0E1013; --graphite:#16191E; --slate:#23272E; --line:#2E333B; --mist:#8A9099;
-  --paper:#F2F1ED; --paper-2:#E4E2DC; --champagne:#C8A96A; --bronze:#9C7A45; --signal:#3D6BFF;
+  --paper:#F2F1ED; --paper-2:#E4E2DC; --accent:#5B6DFF; --accent-deep:#2E46F0; --signal:#5B6DFF; --night:#16213F;
   --bg:var(--ink); --fg:var(--paper); --muted:#A9AEB6;
   --display:"Sora","Segoe UI",system-ui,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
@@ -19,7 +19,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
 p{margin:0}
-.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--champagne)}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .muted{color:var(--muted)}
 .svgdefs{position:absolute;width:0;height:0;overflow:hidden}
 .sym{display:inline-block;width:1em;height:1em;flex:none}
@@ -28,13 +28,13 @@ p{margin:0}
 .lock .wm{font-size:.62em;padding-top:.04em}
 .wm .eu{font-weight:300}
 .gw{display:inline-grid;gap:.16em;line-height:1}
-.gw small{font-family:var(--mono);font-size:max(9px,.17em);letter-spacing:.5em;color:var(--champagne);font-weight:500}
+.gw small{font-family:var(--mono);font-size:max(9px,.17em);letter-spacing:.5em;color:var(--accent);font-weight:500}
 
 /* HERO */
-.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 56px);padding-bottom:72px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 500px at 85% -10%,rgba(200,169,106,.10),transparent 60%),var(--ink)}
+.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 56px);padding-bottom:72px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 500px at 85% -10%,rgba(91,109,255,.10),transparent 60%),var(--ink)}
 .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
 .hero h1{font-size:clamp(40px,6.4vw,84px);font-weight:600;letter-spacing:-.03em;margin-top:18px}
-.hero h1 em{font-style:normal;color:var(--champagne)}
+.hero h1 em{font-style:normal;color:var(--accent)}
 .hero .lede{max-width:56ch;margin-top:22px;color:var(--muted);font-size:18px}
 .hero-mark{justify-self:end;font-size:clamp(140px,22vw,280px);color:var(--paper)}
 .meta-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--mist)}
@@ -43,7 +43,7 @@ p{margin:0}
 /* TOC */
 .toc{display:flex;flex-wrap:wrap;gap:8px 18px;padding-block:20px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px}
 .toc a{color:var(--muted);text-decoration:none}
-.toc a:hover,.toc a:focus-visible{color:var(--champagne)}
+.toc a:hover,.toc a:focus-visible{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 
 /* CHAPTERS */
@@ -63,14 +63,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 
 /* Diagnóstico */
 .risk{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
-.risk .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 8px;border:1px solid var(--champagne);color:var(--champagne);border-radius:3px;white-space:nowrap}
-.risk .tag.hi{border-color:var(--signal);color:#9DB4FF}
+.risk .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 8px;border:1px solid var(--accent);color:var(--accent);border-radius:3px;white-space:nowrap}
+.risk .tag.hi{border-color:var(--accent);background:var(--accent);color:var(--ink)}
+.risk .tag:not(.hi){border-color:var(--mist);color:var(--muted)}
 
 /* Plataforma */
-.pillar{border-top:2px solid var(--champagne);padding-top:16px}
+.pillar{border-top:2px solid var(--accent);padding-top:16px}
 .pillar h4{font-size:16px;margin-bottom:6px}
 .statement{font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.25;letter-spacing:-.015em;max-width:30ch}
-.statement b{font-weight:600;color:var(--champagne)}
+.statement b{font-weight:600;color:var(--accent)}
 .voice{width:100%;border-collapse:collapse;font-size:15px}
 .voice th,.voice td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
 .voice th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);font-weight:400}
@@ -83,7 +84,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .concept .stage.light{background:var(--paper);color:var(--ink)}
 .concept .info{padding:32px;background:var(--ink);display:grid;gap:14px;align-content:start}
 .concept .info h3{font-size:26px}
-.concept .chip{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--champagne);color:var(--ink)}
+.concept .chip{justify-self:start;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--accent);color:var(--ink)}
 .concept .chip.alt{background:transparent;border:1px solid var(--line);color:var(--muted)}
 .proscons{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:14px}
 .proscons h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);font-weight:400;margin-bottom:6px}
@@ -99,11 +100,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .on-ink{background:var(--ink);color:var(--paper)}
 .on-graph{background:var(--graphite);color:var(--paper)}
 .on-paper{background:var(--paper);color:var(--ink)}
-.on-champ{background:var(--champagne);color:var(--ink);--sb:var(--ink)}
+.on-accent{background:var(--accent-deep);color:var(--paper);--sa:var(--paper);--sb:var(--paper)}
 .mono-paper{--sb:var(--paper)}
 .mono-ink{--sb:var(--ink)}
-.clear{position:relative;display:inline-grid;place-items:center;padding:28px;outline:1px dashed rgba(200,169,106,.6);outline-offset:0}
-.clear::after{content:"x";position:absolute;top:4px;left:8px;font-family:var(--mono);font-size:10px;color:var(--champagne)}
+.clear{position:relative;display:inline-grid;place-items:center;padding:28px;outline:1px dashed rgba(91,109,255,.6);outline-offset:0}
+.clear::after{content:"x";position:absolute;top:4px;left:8px;font-family:var(--mono);font-size:10px;color:var(--accent)}
 .dont{position:relative}
 .dont::before{content:"";position:absolute;inset:14px;background:linear-gradient(to top right,transparent calc(50% - 1px),#E5484D 50%,transparent calc(50% + 1px));pointer-events:none;opacity:.8}
 
@@ -114,7 +115,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .swatch .sw-info b{display:block;font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:4px}
 .swatch code{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .copy{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--paper);border-bottom:1px dotted var(--mist)}
-.copy:hover{color:var(--champagne)}
+.copy:hover{color:var(--accent)}
 .ratio{display:flex;height:44px;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
 .ratio div{display:grid;place-items:center;font-family:var(--mono);font-size:11px}
 
@@ -135,30 +136,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .site{background:var(--ink)}
 .site nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 32px;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
 .site nav .links{display:flex;gap:22px;color:var(--muted);flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 18px;border-radius:4px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.02em;background:var(--champagne);color:var(--ink)}
+.btn{display:inline-block;padding:10px 18px;border-radius:4px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.02em;background:var(--accent);color:var(--ink)}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--paper)}
 .site .s-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;padding:56px 32px 48px;align-items:center}
 .site .s-hero h4{font-size:clamp(28px,3.6vw,46px);letter-spacing:-.025em;font-weight:600}
-.site .s-hero h4 em{font-style:normal;color:var(--champagne)}
+.site .s-hero h4 em{font-style:normal;color:var(--accent)}
 .site .s-hero p{margin-top:16px;color:var(--muted);max-width:44ch;font-size:15px}
 .site .actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
 .grid-art{aspect-ratio:1;max-width:100%;border-radius:6px;background:
   linear-gradient(var(--line) 1px,transparent 1px) 0 0/12.5% 12.5%,
   linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/12.5% 12.5%, var(--graphite);
   display:grid;place-items:center;font-size:120px;color:var(--paper);position:relative}
-.grid-art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(61,107,255,.18),transparent 55%)}
+.grid-art::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(91,109,255,.18),transparent 55%)}
 .schools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
 .schools div{padding:18px 20px;border-right:1px solid var(--line);font-size:13px;min-width:0}
 .schools div:last-child{border-right:0}
 .schools b{display:block;font-family:var(--display);font-size:15px;margin-top:4px}
-.code{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--champagne)}
+.code{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent)}
 
 .lms{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:420px;background:var(--ink)}
 .lms aside{border-right:1px solid var(--line);padding:20px;font-size:13px;display:grid;gap:6px;align-content:start;background:#111317}
 .lms aside .mod{padding:10px 12px;border-radius:4px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.lms aside .mod.on{background:var(--slate);color:var(--paper);box-shadow:inset 2px 0 0 var(--champagne)}
+.lms aside .mod.on{background:var(--slate);color:var(--paper);box-shadow:inset 2px 0 0 var(--accent)}
 .lms aside .mod.done{color:var(--paper)}
-.lms aside .mod.done span:last-child{color:var(--champagne)}
+.lms aside .mod.done span:last-child{color:var(--accent)}
 .lms main{padding:24px;display:grid;gap:16px;align-content:start}
 .player{aspect-ratio:16/9;max-width:100%;border-radius:6px;background:linear-gradient(135deg,#1B1F26,#0E1013);position:relative;overflow:hidden}
 .player .av{position:absolute;right:8%;bottom:0;width:34%;height:88%}
@@ -166,9 +167,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .player .ttl small{display:block;margin-bottom:8px}
 .player .ttl strong{font-family:var(--display);font-size:clamp(16px,2.2vw,28px);line-height:1.15;font-weight:600}
 .player .ctrl{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.12)}
-.player .ctrl::before{content:"";display:block;height:100%;width:38%;background:var(--champagne)}
+.player .ctrl::before{content:"";display:block;height:100%;width:38%;background:var(--accent)}
 .progress{height:6px;border-radius:99px;background:var(--slate);overflow:hidden}
-.progress span{display:block;height:100%;background:var(--champagne)}
+.progress span{display:block;height:100%;background:var(--accent)}
 
 .covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .cover{aspect-ratio:4/5;max-width:100%;border-radius:6px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;min-width:0}
@@ -181,21 +182,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .thumb .av{position:absolute;right:0;bottom:0;height:96%;width:44%}
 .thumb .txt{position:absolute;left:6%;top:10%;bottom:10%;width:56%;display:flex;flex-direction:column;justify-content:space-between}
 .thumb strong{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.6vw,32px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
-.thumb strong em{font-style:normal;color:var(--champagne)}
+.thumb strong em{font-style:normal;color:var(--accent)}
 .thumb .ep{font-family:var(--mono);font-size:11px;color:var(--mist)}
 .thumb .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.8);font-family:var(--mono);font-size:11px;padding:2px 6px;border-radius:3px;color:#fff}
 
 .social{display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;align-items:start}
 .phone{width:100%;max-width:300px;aspect-ratio:9/19;border-radius:34px;border:8px solid #22262D;background:var(--ink);overflow:hidden;display:flex;flex-direction:column}
 .ig-head{padding:18px 14px 10px;display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
-.ig-av{width:72px;height:72px;border-radius:50%;background:var(--ink);border:2px solid var(--champagne);display:grid;place-items:center;font-size:34px;color:var(--paper)}
+.ig-av{width:72px;height:72px;border-radius:50%;background:var(--ink);border:2px solid var(--accent);display:grid;place-items:center;font-size:34px;color:var(--paper)}
 .ig-stats{display:flex;justify-content:space-between;font-size:11px;text-align:center;color:var(--muted)}
 .ig-stats b{display:block;color:var(--paper);font-size:13px}
 .ig-bio{padding:0 14px 10px;font-size:11.5px;line-height:1.45}
 .ig-bio b{font-size:12.5px}
 .ig-hl{display:flex;gap:10px;padding:4px 14px 12px}
 .ig-hl div{text-align:center;font-size:9.5px;color:var(--muted)}
-.ig-hl span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--graphite);font-family:var(--mono);font-size:9px;color:var(--champagne);margin-bottom:4px}
+.ig-hl span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--graphite);font-family:var(--mono);font-size:9px;color:var(--accent);margin-bottom:4px}
 .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;flex:1;align-content:start}
 .ig-grid div{aspect-ratio:1;display:grid;place-items:center;font-family:var(--display);font-size:10px;font-weight:600;text-align:center;padding:6px;line-height:1.15}
 .posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
@@ -205,16 +206,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .post .foot{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-family:var(--mono);position:relative}
 
 .cert{background:var(--paper);color:var(--ink);aspect-ratio:1.414/1;max-width:100%;border-radius:4px;padding:5%;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
-.cert::before{content:"";position:absolute;inset:3%;border:1px solid var(--bronze);pointer-events:none}
+.cert::before{content:"";position:absolute;inset:3%;border:1px solid var(--accent-deep);pointer-events:none}
 .cert .top{display:flex;justify-content:space-between;align-items:center;font-size:clamp(18px,2.4vw,30px);position:relative}
-.cert .top .lbl{color:var(--bronze);font-size:clamp(8px,1vw,11px)}
+.cert .top .lbl{color:var(--accent-deep);font-size:clamp(8px,1vw,11px)}
 .cert .mid{align-self:center;position:relative}
 .cert .mid small{font-family:var(--mono);font-size:clamp(8px,1vw,11px);letter-spacing:.16em;text-transform:uppercase;color:#6A6F78}
 .cert .mid h4{font-size:clamp(24px,4.4vw,56px);font-weight:300;letter-spacing:-.02em;margin:.25em 0}
 .cert .mid p{font-size:clamp(10px,1.3vw,15px);max-width:58ch;color:#3A3F47}
 .cert .bot{display:grid;grid-template-columns:1fr 1fr auto;gap:5%;align-items:end;font-size:clamp(8px,1vw,12px);position:relative}
 .cert .sig{border-top:1px solid var(--ink);padding-top:6px}
-.cert .seal{width:clamp(48px,8vw,96px);aspect-ratio:1;border-radius:50%;border:1px solid var(--bronze);display:grid;place-items:center;font-size:clamp(22px,3.6vw,44px);color:var(--ink)}
+.cert .seal{width:clamp(48px,8vw,96px);aspect-ratio:1;border-radius:50%;border:1px solid var(--accent-deep);display:grid;place-items:center;font-size:clamp(22px,3.6vw,44px);color:var(--ink)}
 .cert .wmark{position:absolute;right:-6%;top:-10%;font-size:clamp(200px,40vw,520px);opacity:.035;color:var(--ink);--sb:var(--ink)}
 
 .slides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -222,7 +223,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .slide h4{font-size:clamp(18px,2.4vw,32px);letter-spacing:-.02em}
 .slide .foot{display:flex;justify-content:space-between;font-family:var(--mono);font-size:clamp(8px,.9vw,11px);color:var(--mist)}
 .slide .pts{display:grid;grid-template-columns:repeat(3,1fr);gap:4%;font-size:clamp(9px,1.05vw,13px)}
-.slide .pts b{display:block;font-family:var(--display);font-size:clamp(14px,2vw,26px);color:var(--champagne);font-weight:600}
+.slide .pts b{display:block;font-family:var(--display);font-size:clamp(14px,2vw,26px);color:var(--accent);font-weight:600}
 
 /* Vinheta */
 .vt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}
@@ -247,35 +248,35 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .replay:hover{color:var(--paper)}
 .timeline{display:grid;gap:0}
 .timeline .step{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
-.timeline .step code{font-family:var(--mono);font-size:12px;color:var(--champagne)}
+.timeline .step code{font-family:var(--mono);font-size:12px;color:var(--accent)}
 
 /* Avatar */
 .avatar-sys{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
 .av-frame{aspect-ratio:16/9;max-width:100%;border-radius:8px;position:relative;overflow:hidden;background:linear-gradient(160deg,#1C2027 0%,#0E1013 70%);border:1px solid var(--line)}
 .av-frame .av{position:absolute;left:50%;transform:translateX(-50%);bottom:0;height:90%;width:44%}
 .av-frame .thirds{position:absolute;inset:0;background:
-  linear-gradient(90deg,transparent calc(33.33% - .5px),rgba(200,169,106,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(200,169,106,.35) 66.66%,transparent calc(66.66% + .5px)),
-  linear-gradient(transparent calc(33.33% - .5px),rgba(200,169,106,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(200,169,106,.35) 66.66%,transparent calc(66.66% + .5px))}
+  linear-gradient(90deg,transparent calc(33.33% - .5px),rgba(91,109,255,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(91,109,255,.35) 66.66%,transparent calc(66.66% + .5px)),
+  linear-gradient(transparent calc(33.33% - .5px),rgba(91,109,255,.35) 33.33%,transparent calc(33.33% + .5px),transparent calc(66.66% - .5px),rgba(91,109,255,.35) 66.66%,transparent calc(66.66% + .5px))}
 .lower{position:absolute;left:5%;bottom:9%;display:flex;align-items:stretch;background:rgba(14,16,19,.88);border-radius:3px;overflow:hidden;backdrop-filter:blur(6px)}
-.lower .bar{width:4px;background:var(--champagne)}
+.lower .bar{width:4px;background:var(--accent)}
 .lower .t{padding:8px 14px}
 .lower b{display:block;font-family:var(--display);font-size:clamp(11px,1.5vw,17px)}
 .lower span{font-family:var(--mono);font-size:clamp(8px,.9vw,11px);color:var(--muted)}
 .disclose{position:absolute;right:4%;top:6%;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:clamp(8px,.9vw,11px);padding:5px 9px;border:1px solid rgba(242,241,237,.25);border-radius:99px;color:var(--paper);background:rgba(14,16,19,.6)}
-.disclose i{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(61,107,255,.25)}
+.disclose i{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(91,109,255,.25)}
 .wear{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .wear span{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
 .wear i{width:22px;height:22px;border-radius:50%;border:1px solid var(--line)}
 
 /* Arquitetura */
 .arch{display:grid;gap:16px}
-.arch .mother{display:flex;align-items:center;gap:14px;font-size:44px;padding:24px;border:1px solid var(--champagne);border-radius:6px;background:var(--graphite);flex-wrap:wrap}
+.arch .mother{display:flex;align-items:center;gap:14px;font-size:44px;padding:24px;border:1px solid var(--accent);border-radius:6px;background:var(--graphite);flex-wrap:wrap}
 .arch .mother p{font-size:14px;color:var(--muted);max-width:52ch}
 .arch .subs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .arch .sub{padding:16px;border:1px solid var(--line);border-radius:6px;font-size:13px;min-width:0}
 .arch .sub .lock{font-size:26px;margin-bottom:8px}
 .arch .sub .lock .wm{font-size:.55em}
-.arch .sub em{font-style:normal;font-family:var(--display);font-weight:300;letter-spacing:.02em;font-size:.6em;color:var(--champagne);margin-left:.1em}
+.arch .sub em{font-style:normal;font-family:var(--display);font-weight:300;letter-spacing:.02em;font-size:.6em;color:var(--accent);margin-left:.1em}
 
 footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mist);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -302,19 +303,19 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     <!-- PRAXIA: haste (fundamento) + vetor ascendente (aplicação). Grade 64, espessura 12. -->
     <symbol id="px" viewBox="0 0 64 64">
       <rect class="stem" x="8" y="8" width="12" height="48" fill="var(--sa, currentColor)"/>
-      <path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="var(--sb, #C8A96A)"/>
+      <path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="var(--sb, #5B6DFF)"/>
     </symbol>
     <!-- VÉRTICE: duas hastes desiguais convergindo num ponto -->
     <symbol id="vx" viewBox="0 0 64 64">
       <path d="M6 10H18L35 52H23Z" fill="var(--sa, currentColor)"/>
-      <path d="M46 22H58L41 52H35Z" fill="var(--sb, #C8A96A)"/>
-      <rect x="46" y="8" width="10" height="10" fill="var(--sb, #C8A96A)"/>
+      <path d="M46 22H58L41 52H35Z" fill="var(--sb, #5B6DFF)"/>
+      <rect x="46" y="8" width="10" height="10" fill="var(--sb, #5B6DFF)"/>
     </symbol>
     <!-- STRATA: camadas de conhecimento que sobem -->
     <symbol id="st" viewBox="0 0 64 64">
       <rect x="6" y="42" width="34" height="10" fill="var(--sa, currentColor)"/>
       <rect x="15" y="27" width="34" height="10" fill="var(--sa, currentColor)" opacity=".7"/>
-      <rect x="24" y="12" width="34" height="10" fill="var(--sb, #C8A96A)"/>
+      <rect x="24" y="12" width="34" height="10" fill="var(--sb, #5B6DFF)"/>
     </symbol>
     <!-- Silhueta neutra do apresentador (placeholder do avatar) -->
     <symbol id="host" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet">
@@ -332,7 +333,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="lbl">Manual de identidade · v2.0 · nov 2026</span>
+        <span class="lbl">Manual de identidade · v2.1 · nov 2026</span>
         <h1>Conhecimento <em>em prática.</em></h1>
         <p class="lede">Plataforma de marca, três conceitos, sistema de identidade completo e aplicações para uma empresa de educação digital que usa inteligência artificial para escalar o ensino de especialistas reais.</p>
         <div class="meta-row">
@@ -433,7 +434,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     </article>
 
     <article class="concept">
-      <div class="stage light"><span class="lock big-lock" style="--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#vx"/></svg><span class="wm-v" style="font-size:.5em">vértice</span></span></div>
+      <div class="stage light"><span class="lock big-lock" style="--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#vx"/></svg><span class="wm-v" style="font-size:.5em">vértice</span></span></div>
       <div class="info">
         <span class="chip alt">Conceito B</span>
         <h3>Vértice</h3>
@@ -465,23 +466,23 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
 <section class="ch" id="logo"><div class="wrap">
   <div class="ch-head">
     <span class="lbl">Cap. 4 · Logotipo</span>
-    <div><h2>Sistema de assinaturas</h2><p>Símbolo em grade de 64 unidades, espessura única de 12. Logotipo em Sora Semibold, caixa alta, espaçamento de 160. A seta é sempre champanhe ou acompanha a cor monocromática; nunca recebe outra cor.</p></div>
+    <div><h2>Sistema de assinaturas</h2><p>Símbolo em grade de 64 unidades, espessura única de 12. Logotipo em Sora Semibold, caixa alta, espaçamento de 160. A seta é sempre ultramar ou acompanha a cor monocromática; nunca recebe outra cor.</p></div>
   </div>
   <div class="ch-body">
     <div class="cols-3">
       <div class="tile"><div class="art on-ink"><span class="lock" style="font-size:46px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Principal · horizontal · fundo grafite</div></div>
-      <div class="tile"><div class="art on-paper"><span class="lock" style="font-size:46px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Principal · fundo claro (seta em bronze)</div></div>
+      <div class="tile"><div class="art on-paper"><span class="lock" style="font-size:46px;--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Principal · fundo claro (seta em ultramar profundo)</div></div>
       <div class="tile"><div class="art on-graph"><div style="display:grid;justify-items:center;gap:14px"><svg class="sym" style="font-size:72px"><use href="#px"/></svg><span class="wm" style="font-size:24px"><span class="eu">EU</span>PRAXIA</span></div></div><div class="cap">Vertical · perfis e capas</div></div>
       <div class="tile"><div class="art on-ink"><svg class="sym" style="font-size:96px"><use href="#px"/></svg></div><div class="cap">Símbolo isolado · avatar, app, favicon</div></div>
       <div class="tile"><div class="art on-ink mono-paper"><span class="lock" style="font-size:52px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Monocromática negativa</div></div>
-      <div class="tile"><div class="art on-champ"><span class="lock" style="font-size:52px;--sa:#0E1013"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Monocromática sobre champanhe</div></div>
+      <div class="tile"><div class="art on-accent"><span class="lock" style="font-size:52px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span></div><div class="cap">Monocromática sobre ultramar</div></div>
     </div>
     <div class="board">
       <h3>Nome e pronúncia · Eupraxia</h3>
       <p class="muted">EU em Light e PRAXIA em Semibold, na mesma linha e com o mesmo espaçamento: a palavra continua inteira, mas a leitura "eu pratico" aparece. Pronúncia oficial eu-PRÁK-sia, repetida igual na vinheta e nos vídeos. Nos primeiros meses, use a assinatura junto: "Eupraxia · Conhecimento em prática."</p>
       <div class="cols-2" style="margin-top:20px">
         <div class="tile"><div class="art on-ink"><span class="wm" style="font-size:44px"><span class="eu">EU</span>PRAXIA</span></div><div class="cap">Logotipo sem símbolo · espaços estreitos</div></div>
-        <div class="tile"><div class="art on-graph"><p style="font-size:16px;max-width:36ch">Em texto, sempre <b>Eupraxia</b>, com inicial maiúscula e sem separar o EU. Endereços: <b style="color:var(--champagne)">eupraxia.com.br</b> e <b style="color:var(--champagne)">@eupraxia</b>.</p></div><div class="cap">Uso em texto corrido</div></div>
+        <div class="tile"><div class="art on-graph"><p style="font-size:16px;max-width:36ch">Em texto, sempre <b>Eupraxia</b>, com inicial maiúscula e sem separar o EU. Endereços: <b style="color:var(--accent)">eupraxia.com.br</b> e <b style="color:var(--accent)">@eupraxia</b>.</p></div><div class="cap">Uso em texto corrido</div></div>
       </div>
     </div>
     <div class="cols-2">
@@ -510,7 +511,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
 <section class="ch" id="cores"><div class="wrap">
   <div class="ch-head">
     <span class="lbl">Cap. 5 · Paleta</span>
-    <div><h2>Grafite, papel e um metal discreto</h2><p>O champanhe é usado como sinal de valor, não como decoração. O azul elétrico aparece só onde há interação ou tecnologia em funcionamento. Clique no código para copiar.</p></div>
+    <div><h2>Grafite, papel e um azul intenso</h2><p>O ultramar marca o que importa: o símbolo, os destaques e as chamadas para ação. Tem dois tons: Ultramar Luz para fundos escuros e Ultramar para fundos claros. Preto com dourado ficou de fora de propósito, porque no Brasil virou a estética dos infoprodutos. Clique no código para copiar.</p></div>
   </div>
   <div class="ch-body">
     <div class="cols-4" id="swatches"></div>
@@ -520,10 +521,10 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
         <div style="flex:55;background:#0E1013;color:#F2F1ED">Grafite 55%</div>
         <div style="flex:25;background:#F2F1ED;color:#0E1013">Papel 25%</div>
         <div style="flex:12;background:#23272E;color:#F2F1ED">Ardósia 12%</div>
-        <div style="flex:6;background:#C8A96A;color:#0E1013">6%</div>
-        <div style="flex:2;background:#3D6BFF"></div>
+        <div style="flex:6;background:#5B6DFF;color:#0E1013">6%</div>
+        <div style="flex:2;background:#16213F"></div>
       </div>
-      <p class="muted" style="margin-top:12px">Contraste: papel sobre grafite 16,9:1; champanhe sobre grafite 8,5:1 (AAA para texto). Bronze sobre papel tem 3,5:1: use só em elementos gráficos e textos de 24 px ou mais (18 px em negrito).</p>
+      <p class="muted" style="margin-top:12px">Contraste: papel sobre grafite 16,9:1; Ultramar Luz sobre grafite 4,6:1 e Ultramar sobre papel 5,7:1, ambos AA para texto. Nunca use o Ultramar (#2E46F0) para texto sobre grafite: fica com 2,9:1.</p>
     </div>
   </div>
 </div></section>
@@ -611,17 +612,17 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <div class="mock-cap"><h3>Capas de curso</h3><span class="lbl">4:5 · vitrine e anúncios</span></div>
       <div class="covers">
         <div class="cover on-ink" style="border:1px solid var(--line)"><svg class="sym big"><use href="#px"/></svg><span class="code">IMO-01 · Escola de Negócios Imobiliários</span><h4>Captação de imóveis com exclusividade</h4><div class="foot"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="muted">6 módulos</span></div></div>
-        <div class="cover on-paper"><svg class="sym big" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg><span class="code" style="color:var(--bronze)">LID-01 · Escola de Liderança</span><h4>Liderança aplicada para novos gestores</h4><div class="foot"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span style="color:#5A5F67">8 módulos</span></div></div>
-        <div class="cover" style="background:linear-gradient(160deg,#16213F,#0E1013 70%);border:1px solid var(--line)"><svg class="sym big" style="--sb:#3D6BFF"><use href="#px"/></svg><span class="code" style="color:#9DB4FF">IAA-01 · Escola de IA Aplicada</span><h4>Automação com IA para pequenos negócios</h4><div class="foot"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="muted">5 módulos</span></div></div>
+        <div class="cover on-paper"><svg class="sym big" style="--sa:#0E1013;--sb:#2E46F0"><use href="#px"/></svg><span class="code" style="color:var(--accent-deep)">LID-01 · Escola de Liderança</span><h4>Liderança aplicada para novos gestores</h4><div class="foot"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span style="color:#5A5F67">8 módulos</span></div></div>
+        <div class="cover" style="background:linear-gradient(160deg,#16213F,#0E1013 70%);border:1px solid var(--line)"><svg class="sym big" style="--sb:#5B6DFF"><use href="#px"/></svg><span class="code" style="color:#A9B4FF">IAA-01 · Escola de IA Aplicada</span><h4>Automação com IA para pequenos negócios</h4><div class="foot"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="muted">5 módulos</span></div></div>
       </div>
-      <p class="muted" style="margin-top:12px;font-size:14px">A Escola de IA é a única que usa azul elétrico no fundo, como código de categoria. O símbolo da marca permanece champanhe.</p>
+      <p class="muted" style="margin-top:12px;font-size:14px">A Escola de IA usa fundo azul-noite como código de categoria; as demais escolas alternam grafite e papel.</p>
     </div>
 
     <div>
       <div class="mock-cap"><h3>Miniaturas para YouTube</h3><span class="lbl">16:9 · 1280×720</span></div>
       <div class="thumbs">
         <div class="thumb"><div class="txt"><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><strong>O erro que <em>trava</em> sua captação</strong><span class="ep">IMO · EP. 14</span></div><svg class="av"><use href="#host"/></svg><span class="dur">12:48</span></div>
-        <div class="thumb" style="background:var(--paper);color:var(--ink)"><div class="txt"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><strong>3 automações de IA <em style="color:var(--bronze)">em 20 minutos</em></strong><span class="ep" style="color:#5A5F67">IAA · EP. 03</span></div><svg class="av"><use href="#host"/></svg><span class="dur">19:02</span></div>
+        <div class="thumb" style="background:var(--paper);color:var(--ink)"><div class="txt"><span class="lock" style="font-size:22px;--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><strong>3 automações de IA <em style="color:var(--accent-deep)">em 20 minutos</em></strong><span class="ep" style="color:#5A5F67">IAA · EP. 03</span></div><svg class="av"><use href="#host"/></svg><span class="dur">19:02</span></div>
       </div>
       <p class="muted" style="margin-top:12px;font-size:14px">Regra: no máximo seis palavras, uma em destaque, rosto sempre à direita, símbolo no canto superior esquerdo.</p>
     </div>
@@ -631,36 +632,36 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <div class="social">
         <div class="phone">
           <div class="ig-head"><div class="ig-av"><svg class="sym"><use href="#px"/></svg></div><div class="ig-stats"><div><b>128</b>posts</div><div><b>—</b>seguidores</div><div><b>12</b>seguindo</div></div></div>
-          <div class="ig-bio"><b>Eupraxia</b> · <span class="muted">@eupraxia</span><br>Educação profissional com quem já fez.<br>Escolas de Imobiliário, IA, Liderança e Vendas.<br><span style="color:#9DB4FF">eupraxia.com.br</span></div>
+          <div class="ig-bio"><b>Eupraxia</b> · <span class="muted">@eupraxia</span><br>Educação profissional com quem já fez.<br>Escolas de Imobiliário, IA, Liderança e Vendas.<br><span style="color:#A9B4FF">eupraxia.com.br</span></div>
           <div class="ig-hl"><div><span>IMO</span>Imobiliário</div><div><span>IAA</span>IA</div><div><span>LID</span>Liderança</div><div><span>?</span>Método</div></div>
           <div class="ig-grid">
             <div style="background:#0E1013;color:#F2F1ED">Saber não é fazer.</div>
-            <div style="background:#C8A96A;color:#0E1013">IMO-01 aberto</div>
+            <div style="background:#5B6DFF;color:#0E1013">IMO-01 aberto</div>
             <div style="background:#F2F1ED;color:#0E1013">5 erros de precificação</div>
             <div style="background:#23272E;color:#F2F1ED">Aula grátis</div>
-            <div style="background:#0E1013;color:#C8A96A">"Quem já fez"</div>
+            <div style="background:#0E1013;color:#5B6DFF">"Quem já fez"</div>
             <div style="background:#16213F;color:#F2F1ED">IA para corretores</div>
             <div style="background:#F2F1ED;color:#0E1013">Liderança em 1 slide</div>
             <div style="background:#0E1013;color:#F2F1ED">Bastidores do avatar</div>
-            <div style="background:#C8A96A;color:#0E1013">Turma nova</div>
+            <div style="background:#5B6DFF;color:#0E1013">Turma nova</div>
           </div>
         </div>
         <div class="posts">
           <div class="post on-ink" style="border:1px solid var(--line)"><span class="code">Ideia · LID</span><h4>Delegar não é se livrar de tarefas. É multiplicar decisões.</h4><div class="foot"><span class="lock" style="font-size:18px;font-family:var(--display)"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="muted">01/06</span></div></div>
-          <div class="post on-champ"><span class="code" style="color:var(--ink)">Lançamento</span><h4>Captação de imóveis com exclusividade. Turma aberta.</h4><div class="foot"><span class="lock" style="font-size:18px;--sa:#0E1013;font-family:var(--display)"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>IMO-01</span></div></div>
+          <div class="post on-accent"><span class="code" style="color:var(--paper)">Lançamento</span><h4>Captação de imóveis com exclusividade. Turma aberta.</h4><div class="foot"><span class="lock" style="font-size:18px;font-family:var(--display)"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>IMO-01</span></div></div>
           <div class="post story on-graph" style="border:1px solid var(--line)"><span class="lock" style="font-size:18px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><div><span class="code">Enquete</span><h4 style="margin-top:10px">Você precifica pelo mercado ou pelo proprietário?</h4><div style="display:grid;gap:8px;margin-top:16px;font-size:13px"><span class="btn ghost" style="text-align:center">Pelo mercado</span><span class="btn ghost" style="text-align:center">Pelo proprietário</span></div></div><div class="foot"><span class="muted">Story · 9:16</span></div></div>
         </div>
       </div>
-      <p class="muted" style="margin-top:12px;font-size:14px">Três famílias de template: Ideia (fundo grafite, frase forte), Lançamento (champanhe, produto) e Interação (ardósia, enquete ou pergunta). A grade alterna as três para manter ritmo visual.</p>
+      <p class="muted" style="margin-top:12px;font-size:14px">Três famílias de template: Ideia (fundo grafite, frase forte), Lançamento (ultramar, produto) e Interação (ardósia, enquete ou pergunta). A grade alterna as três para manter ritmo visual.</p>
     </div>
 
     <div>
       <div class="mock-cap"><h3>Certificado de conclusão</h3><span class="lbl">A4 paisagem · PDF</span></div>
       <div class="cert">
         <svg class="sym wmark"><use href="#px"/></svg>
-        <div class="top"><span class="lock" style="--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="lbl">Certificado · IMO-01-2026-00412</span></div>
+        <div class="top"><span class="lock" style="--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span class="lbl">Certificado · IMO-01-2026-00412</span></div>
         <div class="mid"><small>Certificamos que</small><h4>Nome do Aluno</h4><p>concluiu o curso <b>Captação de imóveis com exclusividade</b>, da Escola de Negócios Imobiliários, com carga horária de 12 horas e entrega do projeto prático final.</p></div>
-        <div class="bot"><div class="sig">Especialista responsável</div><div class="sig">Direção acadêmica · Eupraxia</div><div class="seal"><svg class="sym" style="--sa:#0E1013;--sb:#9C7A45"><use href="#px"/></svg></div></div>
+        <div class="bot"><div class="sig">Especialista responsável</div><div class="sig">Direção acadêmica · Eupraxia</div><div class="seal"><svg class="sym" style="--sa:#0E1013;--sb:#2E46F0"><use href="#px"/></svg></div></div>
       </div>
       <p class="muted" style="margin-top:12px;font-size:14px">O código do certificado permite validação pública em eupraxia.com.br/validar. É o detalhe que dá credibilidade ao documento.</p>
     </div>
@@ -669,7 +670,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <div class="mock-cap"><h3>Apresentações e material didático</h3><span class="lbl">16:9</span></div>
       <div class="slides">
         <div class="slide on-ink"><span class="lock" style="font-size:20px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><div><span class="code">IMO-01 · Módulo 3</span><h4 style="margin-top:10px">Avaliação e precificação</h4></div><div class="foot"><span>Escola de Negócios Imobiliários</span><span>03</span></div></div>
-        <div class="slide on-paper" style="border-color:var(--paper-2)"><span class="code" style="color:var(--bronze)">Os três números que definem o preço</span><div class="pts" style="color:#3A3F47"><div><b style="color:var(--bronze)">m²</b>Valor médio do metro quadrado na microrregião</div><div><b style="color:var(--bronze)">DOM</b>Dias em mercado dos comparáveis</div><div><b style="color:var(--bronze)">Δ%</b>Desconto médio entre anúncio e venda</div></div><div class="foot" style="color:#6A6F78"><span class="lock" style="font-size:14px;--sa:#0E1013;--sb:#9C7A45"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>07</span></div></div>
+        <div class="slide on-paper" style="border-color:var(--paper-2)"><span class="code" style="color:var(--accent-deep)">Os três números que definem o preço</span><div class="pts" style="color:#3A3F47"><div><b style="color:var(--accent-deep)">m²</b>Valor médio do metro quadrado na microrregião</div><div><b style="color:var(--accent-deep)">DOM</b>Dias em mercado dos comparáveis</div><div><b style="color:var(--accent-deep)">Δ%</b>Desconto médio entre anúncio e venda</div></div><div class="foot" style="color:#6A6F78"><span class="lock" style="font-size:14px;--sa:#0E1013;--sb:#2E46F0"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>07</span></div></div>
       </div>
       <p class="muted" style="margin-top:12px;font-size:14px">Slides de abertura de módulo em grafite; slides de conteúdo em papel, que leem melhor em vídeo comprimido e em impressão.</p>
     </div>
@@ -686,7 +687,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
   <div class="ch-body vt">
     <div class="vt-stage play" id="vt">
       <div class="gridbg"></div>
-      <div class="vt-lock"><svg class="sym" viewBox="0 0 64 64" aria-label="Símbolo Eupraxia"><rect class="stem" x="8" y="8" width="12" height="48" fill="#F2F1ED"/><path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="#C8A96A"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></div>
+      <div class="vt-lock"><svg class="sym" viewBox="0 0 64 64" aria-label="Símbolo Eupraxia"><rect class="stem" x="8" y="8" width="12" height="48" fill="#F2F1ED"/><path class="arrow" d="M26 8H56V38H44V28.5L32 40.5L23.5 32L35.5 20H26Z" fill="#5B6DFF"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></div>
       <div class="vt-sub">Conhecimento em prática</div>
       <button class="replay" id="replay" type="button">Repetir</button>
     </div>
@@ -694,7 +695,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <h3>Roteiro de abertura</h3>
       <div class="step"><code>0,0 s</code><span>Grafite com grade sutil surgindo.</span></div>
       <div class="step"><code>0,2 s</code><span>Haste sobe de baixo para cima, em papel.</span></div>
-      <div class="step"><code>0,7 s</code><span>Vetor champanhe entra na diagonal e trava no lugar. Pulso sonoro.</span></div>
+      <div class="step"><code>0,7 s</code><span>Vetor ultramar entra na diagonal e trava no lugar. Pulso sonoro.</span></div>
       <div class="step"><code>1,1 s</code><span>EUPRAXIA assenta, espaçamento fecha de 600 para 160; o EU, em Light, acende por último.</span></div>
       <div class="step"><code>1,8 s</code><span>Assinatura "Conhecimento em prática".</span></div>
       <div class="step"><code>3,0 s</code><span>Corte para código do curso e título da aula.</span></div>
@@ -721,14 +722,14 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
       <ul>
         <li><b style="color:var(--paper)">Enquadramento:</b> plano médio, olhos na linha superior dos terços, ombros visíveis. Em aulas com tela, avatar à direita em 35% da largura.</li>
         <li><b style="color:var(--paper)">Cenário:</b> grafite com gradiente suave e profundidade; nunca estúdio falso, estante de livros genérica ou cenário futurista.</li>
-        <li><b style="color:var(--paper)">Luz:</b> chave quente lateral (3200 K) e recorte frio discreto, que ecoa champanhe e azul.</li>
-        <li><b style="color:var(--paper)">Identificação:</b> lower third com barra champanhe na primeira aparição de cada aula.</li>
+        <li><b style="color:var(--paper)">Luz:</b> chave neutra lateral (4000 K) e recorte frio discreto, que ecoa o ultramar.</li>
+        <li><b style="color:var(--paper)">Identificação:</b> lower third com barra ultramar na primeira aparição de cada aula.</li>
         <li><b style="color:var(--paper)">Selo:</b> "Apresentação digital do especialista" sempre visível nos primeiros 10 s e na thumbnail da plataforma.</li>
         <li><b style="color:var(--paper)">Voz:</b> ritmo de mentor, pausas reais, sem entonação de locutor.</li>
       </ul>
       <h3 style="margin-top:20px">Figurino</h3>
       <div class="wear">
-        <span><i style="background:#0E1013"></i>Grafite</span><span><i style="background:#2A2E35"></i>Ardósia</span><span><i style="background:#F2F1ED"></i>Off-white</span><span><i style="background:#6B5A43"></i>Caramelo</span>
+        <span><i style="background:#0E1013"></i>Grafite</span><span><i style="background:#2A2E35"></i>Ardósia</span><span><i style="background:#F2F1ED"></i>Off-white</span><span><i style="background:#1E2A4A"></i>Azul-marinho</span>
       </div>
       <p class="muted" style="margin-top:10px;font-size:14px">Tecidos lisos. Evite listras finas e estampas: geram artefatos no avatar. Sem logotipo na roupa.</p>
     </div>
@@ -748,7 +749,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
         <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span><em>Escolas</em></span><p class="muted">Imobiliário, IA Aplicada, Liderança, Vendas, Marketing, Negócios, Carreira. Código de três letras.</p></div>
         <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span><em>Faculty</em></span><p class="muted">Rede de especialistas convidados, cada um com avatar próprio no padrão do capítulo 9.</p></div>
         <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span><em>Empresas</em></span><p class="muted">Trilhas corporativas e treinamento de equipes. Mesmo sistema, materiais em papel.</p></div>
-        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span><em>Lab</em></span><p class="muted">Conteúdo e ferramentas de IA. Único submarca com azul elétrico como cor de apoio.</p></div>
+        <div class="sub"><span class="lock"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span><em>Lab</em></span><p class="muted">Conteúdo e ferramentas de IA. Usa o azul-noite das capas de IA como fundo de apoio.</p></div>
       </div>
     </div>
     <div class="cols-3">
@@ -771,7 +772,7 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
 
 </main>
 
-<div class="wrap"><footer><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>Eupraxia · manual de identidade v2.0 · nome sujeito a validação</span></footer></div>
+<div class="wrap"><footer><span class="lock" style="font-size:22px"><svg class="sym"><use href="#px"/></svg><span class="wm"><span class="eu">EU</span>PRAXIA</span></span><span>Eupraxia · manual de identidade v2.1 · nome sujeito a validação</span></footer></div>
 
 <script>
 (function(){
@@ -780,9 +781,9 @@ footer{padding-block:48px;font-family:var(--mono);font-size:12px;color:var(--mis
     ["Ardósia","#23272E","35 39 46","Superfícies, cartões, interface",'#F2F1ED'],
     ["Papel","#F2F1ED","242 241 237","Fundo claro, materiais, certificado",'#0E1013'],
     ["Névoa","#8A9099","138 144 153","Textos de apoio, linhas",'#0E1013'],
-    ["Champanhe","#C8A96A","200 169 106","Símbolo, destaques, CTA",'#0E1013'],
-    ["Bronze","#9C7A45","156 122 69","Champanhe em fundos claros",'#F2F1ED'],
-    ["Azul Sinal","#3D6BFF","61 107 255","Interação, links, Escola de IA",'#F2F1ED'],
+    ["Ultramar Luz","#5B6DFF","91 109 255","Símbolo e destaques em fundo escuro",'#0E1013'],
+    ["Ultramar","#2E46F0","46 70 240","Cor da marca; fundos claros, CTA",'#F2F1ED'],
+    ["Azul-noite","#16213F","22 33 63","Escola de IA, gradientes",'#F2F1ED'],
     ["Grafite Médio","#16191E","22 25 30","Fundo secundário",'#F2F1ED']
   ];
   var box=document.getElementById('swatches');

@@ -1,9 +1,11 @@
-/* Praxia — tokens de marca v1.0 */
+/* Eupraxia — tokens de marca v2.1 */
 :root{
-  --praxia-grafite:#0E1013; --praxia-grafite-medio:#16191E; --praxia-ardosia:#23272E;
-  --praxia-nevoa:#8A9099; --praxia-papel:#F2F1ED;
-  --praxia-champanhe:#C8A96A; --praxia-bronze:#9C7A45; --praxia-sinal:#3D6BFF;
-  --praxia-display:"Sora",system-ui,sans-serif;
-  --praxia-texto:"IBM Plex Sans",system-ui,sans-serif;
-  --praxia-mono:"JetBrains Mono",ui-monospace,monospace;
+  --eupraxia-grafite:#0E1013; --eupraxia-grafite-medio:#16191E; --eupraxia-ardosia:#23272E;
+  --eupraxia-nevoa:#8A9099; --eupraxia-papel:#F2F1ED;
+  --eupraxia-ultramar:#2E46F0;      /* cor da marca; fundos claros e CTA */
+  --eupraxia-ultramar-luz:#5B6DFF;  /* destaque sobre fundos escuros */
+  --eupraxia-azul-noite:#16213F;    /* Escola de IA, gradientes */
+  --eupraxia-display:"Sora",system-ui,sans-serif;
+  --eupraxia-texto:"IBM Plex Sans",system-ui,sans-serif;
+  --eupraxia-mono:"JetBrains Mono",ui-monospace,monospace;
 }
