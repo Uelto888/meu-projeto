@@ -1,0 +1,346 @@
+<title>uelto.ia Identidade</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: guia de marca pessoal em capítulos; mockups usam unidades de contêiner (cqw) para escalar como peças reais em qualquer largura. */
+:root{
+  --ink:#0E1013; --graphite:#16191E; --slate:#23272E; --line:#2E333B; --mist:#8A9099; --muted:#A9AEB6;
+  --paper:#F2F1ED; --paper-2:#E4E2DC; --ultra:#2E46F0; --ultra-l:#5B6DFF; --night:#16213F;
+  --display:"Sora","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --face:url("data:image/jpeg;base64,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");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;margin:0;line-height:1.15;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ultra-l)}
+.muted{color:var(--muted)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ultra-l);outline-offset:3px}
+
+/* Marca */
+.wm{font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:1;white-space:nowrap}
+.wm .dot{display:inline-block;width:.2em;height:.2em;background:var(--dot,var(--ultra-l));margin:0 .035em 0 .05em;vertical-align:baseline}
+.wm .ia{color:var(--dot,var(--ultra-l))}
+.mono{display:inline-grid;place-items:center;aspect-ratio:1;border-radius:22%;background:var(--ink);color:var(--paper);font-family:var(--display);font-weight:700;letter-spacing:-.04em;position:relative;line-height:1}
+.mono span{font-size:.62em;transform:translate(-.06em,-.06em)}
+.mono i{position:absolute;width:.14em;height:.14em;background:var(--ultra-l);right:24%;bottom:27%}
+.face{background:var(--face) center/cover;border-radius:50%}
+
+/* Hero */
+.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 64px);padding-bottom:72px;border-bottom:1px solid var(--line);background:radial-gradient(900px 420px at 90% 0%,rgba(46,70,240,.22),transparent 65%),var(--ink)}
+.hero .wm{font-size:clamp(64px,13vw,168px);display:block;margin-top:18px}
+.hero p.lede{font-family:var(--display);font-weight:300;font-size:clamp(20px,2.6vw,30px);margin-top:20px;max-width:30ch;letter-spacing:-.01em}
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;padding-block:20px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px}
+.toc a{color:var(--muted);text-decoration:none}
+.toc a:hover{color:var(--ultra-l)}
+
+.ch{padding-block:80px;border-bottom:1px solid var(--line)}
+.ch-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:40px}
+.ch-head h2{font-size:clamp(28px,3.4vw,40px)}
+.ch-head p{margin-top:12px;max-width:64ch;color:var(--muted)}
+.stack{display:grid;gap:24px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.board{background:var(--graphite);border:1px solid var(--line);border-radius:6px;padding:26px;min-width:0}
+.board h3{font-size:18px;margin-bottom:8px}
+.board ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.board li+li{margin-top:5px}
+.pillar{border-top:2px solid var(--ultra-l);padding-top:14px}
+.pillar h4{font-size:16px;margin-bottom:4px}
+.no{color:#F08A8A}
+
+/* Conceitos */
+.concept{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0}
+.concept .stage{display:grid;place-items:center;min-height:200px;background:var(--graphite);padding:24px}
+.concept .info{padding:20px;display:grid;gap:8px;align-content:start}
+.concept h3{font-size:19px}
+.chip{justify-self:start;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.rec{background:var(--ultra);border-color:var(--ultra);color:#fff}
+.cursor{display:inline-block;width:.5em;height:.78em;background:var(--ultra-l);margin-left:.06em;vertical-align:-.04em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+.badge{display:inline-flex;align-items:center;gap:.35em;font-family:var(--display);font-weight:700;letter-spacing:.14em;line-height:1}
+.badge b{font-weight:700;background:var(--ultra);color:#fff;border-radius:.18em;padding:.18em .32em;letter-spacing:.04em}
+
+.tile{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:grid;grid-template-rows:1fr auto;min-height:190px;min-width:0}
+.tile .art{display:grid;place-items:center;padding:28px 14px}
+.tile .cap{padding:9px 14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--mist);background:var(--ink)}
+.on-ink{background:var(--ink)} .on-paper{background:var(--paper);color:var(--ink);--dot:var(--ultra)} .on-ultra{background:var(--ultra);color:#fff;--dot:#fff} .on-graph{background:var(--graphite)}
+
+/* Cores */
+.sw{border-radius:6px;overflow:hidden;border:1px solid var(--line);min-width:0}
+.sw .c{height:96px;display:flex;align-items:flex-end;padding:10px;font-family:var(--mono);font-size:11px}
+.sw .i{padding:12px;background:var(--graphite);font-size:13px}
+.sw .i b{display:block;font-family:var(--display);font-size:15px}
+.sw code{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Tipografia */
+.tspec{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:24px;align-items:end;padding-block:20px;border-bottom:1px solid var(--line)}
+.tspec .s{font-size:clamp(36px,5.6vw,64px);line-height:1.05;overflow-wrap:anywhere}
+
+/* Mockups (escalam pelo contêiner) */
+.mk{container-type:inline-size;min-width:0}
+.cap2{font-family:var(--mono);font-size:11px;color:var(--mist);margin-top:8px}
+.post{aspect-ratio:3/4;border-radius:6px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:7cqw;background:var(--ink);color:var(--paper);border:1px solid var(--line)}
+.post.light{background:var(--paper);color:var(--ink);--dot:var(--ultra);border-color:var(--paper-2)}
+.post.ultra{background:var(--ultra);color:#fff;--dot:#fff;border-color:var(--ultra)}
+.post .top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:3.6cqw;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.post .top .wm{font-size:5.4cqw;letter-spacing:-.03em;text-transform:none;opacity:1}
+.post h4{font-family:var(--display);font-weight:800;font-size:10.4cqw;line-height:1.02;letter-spacing:-.035em}
+.post h4 em{font-style:normal;color:var(--dot,var(--ultra-l))}
+.post .sub{font-size:4.4cqw;line-height:1.35;margin-top:4cqw;opacity:.8}
+.post .foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:3.4cqw;opacity:.85}
+.post .num{font-family:var(--display);font-weight:800;font-size:22cqw;line-height:.9;color:var(--dot,var(--ultra-l));letter-spacing:-.05em}
+.post .steps{display:grid;gap:3cqw;font-size:4.3cqw;line-height:1.3}
+.post .steps div{display:grid;grid-template-columns:7cqw 1fr;gap:2cqw}
+.post .steps b{font-family:var(--mono);color:var(--dot,var(--ultra-l))}
+.post .prompt{font-family:var(--mono);font-size:3.7cqw;line-height:1.45;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:1.6cqw;padding:4cqw}
+.post .avatar{width:17cqw;aspect-ratio:1}
+.post .cta{display:inline-block;margin-top:4cqw;padding:2.6cqw 4.4cqw;border-radius:1.4cqw;background:var(--ultra);color:#fff;font-family:var(--display);font-weight:700;font-size:4.2cqw}
+.reel{aspect-ratio:9/16;border-radius:8px;overflow:hidden;position:relative;background:linear-gradient(180deg,#1A1E26,#0E1013 70%);border:1px solid var(--line)}
+.reel .ph{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:86cqw;aspect-ratio:1;border-radius:50% 50% 0 0;background:var(--face) center 20%/cover;opacity:.95;mask-image:linear-gradient(180deg,#000 60%,transparent)}
+.reel .safe{position:absolute;left:0;right:0;top:12.5%;bottom:12.5%;border-top:1px dashed rgba(91,109,255,.8);border-bottom:1px dashed rgba(91,109,255,.8);pointer-events:none}
+.reel .safe span{position:absolute;right:3cqw;top:1cqw;font-family:var(--mono);font-size:3cqw;color:var(--ultra-l)}
+.reel .t{position:absolute;left:7cqw;right:7cqw;top:17%;}
+.reel .t h4{font-family:var(--display);font-weight:800;font-size:11cqw;line-height:1;letter-spacing:-.035em}
+.reel .t h4 em{font-style:normal;color:var(--ultra-l)}
+.reel .tag{display:inline-block;margin-bottom:3cqw;font-family:var(--mono);font-size:3.6cqw;letter-spacing:.12em;text-transform:uppercase;background:var(--ultra);color:#fff;padding:1.2cqw 2.4cqw;border-radius:1cqw}
+.story .poll{position:absolute;left:8cqw;right:8cqw;top:44%;display:grid;gap:3cqw}
+.story .poll div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:3cqw;padding:4cqw;font-family:var(--display);font-weight:600;font-size:5cqw;text-align:center}
+.story .poll div:first-child{background:var(--ultra);border-color:var(--ultra)}
+
+.hl{display:flex;gap:18px;flex-wrap:wrap}
+.hl div{display:grid;justify-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.hl span{width:64px;height:64px;border-radius:50%;background:var(--ink);border:1px solid var(--line);display:grid;place-items:center}
+.hl svg{width:26px;height:26px;stroke:var(--paper);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hl span.on{background:var(--ultra);border-color:var(--ultra)}
+
+.phone{width:100%;max-width:320px;aspect-ratio:9/19;border-radius:36px;border:8px solid #22262D;background:#fff;color:#111;overflow:hidden;display:flex;flex-direction:column;container-type:inline-size}
+.ig-top{padding:4.5cqw 5cqw 2cqw;font-family:var(--body);font-weight:600;font-size:5.4cqw}
+.ig-h{display:grid;grid-template-columns:24cqw 1fr;gap:5cqw;align-items:center;padding:2cqw 5cqw}
+.ig-h .face{width:24cqw;aspect-ratio:1;border:2px solid var(--ultra)}
+.ig-st{display:flex;justify-content:space-between;font-size:3.4cqw;text-align:center}
+.ig-st b{display:block;font-size:4.4cqw}
+.ig-bio{padding:2cqw 5cqw;font-size:3.6cqw;line-height:1.4}
+.ig-bio b{font-size:3.9cqw}
+.ig-bio a{color:#2E46F0;text-decoration:none;font-weight:600}
+.ig-hl{display:flex;gap:3cqw;padding:2cqw 5cqw 3cqw}
+.ig-hl div{display:grid;justify-items:center;gap:1cqw;font-size:2.8cqw;color:#444}
+.ig-hl span{width:13cqw;height:13cqw;border-radius:50%;background:#0E1013;display:grid;place-items:center;outline:1px solid #ddd;outline-offset:1.5px}
+.ig-hl span.on{background:#2E46F0}
+.ig-hl svg{width:6cqw;height:6cqw;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;flex:1;align-content:start;background:#fff}
+.ig-grid div{aspect-ratio:3/4;padding:2.2cqw;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--display);font-weight:800;font-size:3.1cqw;line-height:1.05;letter-spacing:-.02em;overflow:hidden;position:relative}
+.ig-grid small{font-family:var(--mono);font-weight:400;font-size:2cqw;letter-spacing:.08em;opacity:.75}
+.ig-grid .f{position:absolute;right:-4cqw;bottom:-2cqw;width:16cqw;aspect-ratio:1;border-radius:50%;background:var(--face) center/cover}
+
+/* Landing e PDF */
+.lp{background:var(--ink);border:1px solid var(--line);border-radius:10px;overflow:hidden;container-type:inline-size}
+.lp .bar{display:flex;gap:7px;align-items:center;padding:9px 12px;background:#1B1E24;border-bottom:1px solid var(--line)}
+.lp .bar i{width:9px;height:9px;border-radius:50%;background:#3A3F47}
+.lp .bar span{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--mist);background:var(--ink);padding:3px 10px;border-radius:4px}
+.lp .in{display:grid;grid-template-columns:1.1fr 1fr;gap:5cqw;padding:5cqw;align-items:center}
+.lp h4{font-family:var(--display);font-weight:800;font-size:clamp(22px,4.4cqw,40px);line-height:1.04;letter-spacing:-.03em}
+.lp h4 em{font-style:normal;color:var(--ultra-l)}
+.lp p{color:var(--muted);margin-top:12px;font-size:14px}
+.lp ul{margin:12px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
+.form{background:var(--graphite);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:10px}
+.form .f{display:grid;gap:4px;font-size:12px;color:var(--muted)}
+.form .f span{display:block;background:var(--ink);border:1px solid var(--line);border-radius:5px;padding:9px 11px;font-size:14px;color:var(--mist)}
+.form .ck{display:flex;gap:8px;font-size:11.5px;color:var(--muted);line-height:1.35}
+.form .ck i{flex:none;width:15px;height:15px;border-radius:3px;background:var(--ultra);margin-top:1px}
+.form .go{text-align:center;padding:12px;border-radius:5px;background:var(--ultra);color:#fff;font-family:var(--display);font-weight:700;font-size:14px}
+.pdf{aspect-ratio:1/1.414;background:var(--ink);border:1px solid var(--line);border-radius:4px;padding:9cqw;display:flex;flex-direction:column;justify-content:space-between;container-type:inline-size;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.pdf::after{content:"";position:absolute;right:-30cqw;top:-20cqw;width:90cqw;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(46,70,240,.45),transparent 65%)}
+.pdf .k{font-family:var(--mono);font-size:3.6cqw;letter-spacing:.14em;text-transform:uppercase;color:var(--ultra-l);position:relative}
+.pdf h4{font-family:var(--display);font-weight:800;font-size:13cqw;line-height:.98;letter-spacing:-.04em;position:relative}
+.pdf h4 em{font-style:normal;color:var(--ultra-l)}
+.pdf .wm{font-size:6cqw;position:relative}
+
+footer{padding-block:44px;font-family:var(--mono);font-size:12px;color:var(--mist);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .ch-head,.tspec,.lp .in{grid-template-columns:1fr}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .g4.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ch{padding-block:56px}
+  .board{padding:20px}
+  .phone{margin:0 auto}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-start" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></symbol>
+</defs></svg>
+
+<header class="hero"><div class="wrap">
+  <span class="lbl">Identidade visual · marca pessoal · v1.0</span>
+  <span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span>
+  <p class="lede">IA na prática para quem trabalha de verdade.</p>
+</div></header>
+
+<div class="wrap"><nav class="toc" aria-label="Capítulos"><a href="#essencia">Essência</a><a href="#logo">Logotipo</a><a href="#cores">Cores</a><a href="#tipo">Tipografia</a><a href="#rosto">Seu rosto</a><a href="#instagram">Instagram</a><a href="#modelos">Modelos</a><a href="#guia">Guia e site</a><a href="#regras">Regras</a></nav></div>
+
+<main>
+
+<section class="ch" id="essencia"><div class="wrap">
+  <div class="ch-head"><span class="lbl">01 · Essência</span><div><h2>Quem fala, para quem e com que promessa</h2><p>Marca pessoal: o protagonista é você. A identidade existe para que cada post seja reconhecido como seu antes mesmo de a pessoa ler o nome.</p></div></div>
+  <div class="stack">
+    <div class="g4">
+      <div class="pillar"><h4>Público</h4><p class="muted">Profissionais e pequenos empresários que querem ganhar tempo com IA, sem precisar ser técnicos.</p></div>
+      <div class="pillar"><h4>Promessa</h4><p class="muted">Ferramentas testadas, passo a passo, que economizam horas na semana.</p></div>
+      <div class="pillar"><h4>Tom</h4><p class="muted">Direto, prático, de colega que já testou. Mostra a tela, não promete milagre.</p></div>
+      <div class="pillar"><h4>Diferencial</h4><p class="muted">Tudo aplicado ao trabalho real: reunião, e-mail, proposta, atendimento, planilha.</p></div>
+    </div>
+    <div class="g2">
+      <div class="board"><h3>A marca é</h3><ul><li>Clara: uma dica por post, um resultado por dica.</li><li>Humana: seu rosto, sua voz, seus exemplos.</li><li>Tecnológica sem ser fria: azul intenso, tipografia firme, muito espaço.</li></ul></div>
+      <div class="board"><h3>A marca evita</h3><ul><li><span class="no">Robôs, cérebros, emojis 🤖</span> e visual de ficção científica.</li><li>Promessas do tipo "fique rico com IA".</li><li>Preto com dourado, estética de guru e de infoproduto.</li><li>Cada post com um visual diferente.</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="logo"><div class="wrap">
+  <div class="ch-head"><span class="lbl">02 · Logotipo</span><div><h2>Três caminhos para o nome</h2><p>O logotipo de uma marca pessoal aparece pequeno: no canto dos posts, na capa do guia, no rodapé do site. Precisa ser legível e reconhecível em 20 pixels.</p></div></div>
+  <div class="stack">
+    <div class="g3">
+      <article class="concept"><div class="stage"><span class="wm" style="font-size:52px">uelto<i class="dot"></i><span class="ia">ia</span></span></div><div class="info"><span class="chip rec">A · Recomendado</span><h3>O Ponto</h3><p class="muted">Caixa baixa, firme e próxima. O ponto vira um quadrado azul: o "pixel" que marca a tecnologia sem robôs. O quadrado sozinho vira elemento gráfico em todos os posts.</p></div></article>
+      <article class="concept"><div class="stage"><span class="wm" style="font-size:52px">uelto.ia<i class="cursor"></i></span></div><div class="info"><span class="chip">B</span><h3>O Cursor</h3><p class="muted">Cursor piscando, como quem está digitando um comando. Ótimo em vídeo, mas parece "programador" demais para o público de pequenos empresários.</p></div></article>
+      <article class="concept"><div class="stage"><span class="badge" style="font-size:40px">UELTO <b>IA</b></span></div><div class="info"><span class="chip">C</span><h3>O Selo</h3><p class="muted">Nome em caixa alta e "IA" dentro de uma etiqueta azul, como na sua foto de perfil. Forte, mas mais pesado e com cara de produto.</p></div></article>
+    </div>
+    <p class="muted" style="max-width:72ch">O <b style="color:var(--paper)">Ponto</b> é o mais versátil: funciona do avatar ao outdoor e cria um elemento próprio, o quadrado azul. O cursor do conceito B entra como detalhe de animação nas vinhetas dos vídeos.</p>
+    <div class="g3">
+      <div class="tile"><div class="art on-ink"><span class="wm" style="font-size:46px">uelto<i class="dot"></i><span class="ia">ia</span></span></div><div class="cap">Principal · fundo grafite</div></div>
+      <div class="tile"><div class="art on-paper"><span class="wm" style="font-size:46px">uelto<i class="dot"></i><span class="ia">ia</span></span></div><div class="cap">Principal · fundo papel</div></div>
+      <div class="tile"><div class="art on-ultra"><span class="wm" style="font-size:46px">uelto<i class="dot"></i><span class="ia">ia</span></span></div><div class="cap">Sobre ultramar · ponto branco</div></div>
+    </div>
+    <div class="g2">
+      <div class="board"><h3>Monograma "u."</h3><p class="muted">Para favicon, ícone de destaque, marca d'água em vídeo e selo do PDF. Nunca substitui sua foto no perfil.</p>
+        <div style="display:flex;gap:16px;align-items:end;margin-top:18px;flex-wrap:wrap"><span class="mono" style="font-size:96px;width:96px;border:1px solid var(--line)"><span>u</span><i></i></span><span class="mono" style="font-size:56px;width:56px;border:1px solid var(--line)"><span>u</span><i></i></span><span class="mono" style="font-size:32px;width:32px;border:1px solid var(--line)"><span>u</span><i></i></span><span class="mono" style="font-size:20px;width:20px;border:1px solid var(--line)"><span>u</span><i></i></span></div></div>
+      <div class="board"><h3>Regras do logotipo</h3><ul><li>Sempre em caixa baixa. Nunca "Uelto.IA" ou "UELTO.IA".</li><li>O ponto é um quadrado, nunca um ponto redondo de teclado.</li><li>Ponto e "ia" sempre na mesma cor de destaque.</li><li>Tamanho mínimo: 64 px de largura. Abaixo disso, use o monograma.</li><li>Respiro mínimo em volta: a altura do "u".</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="cores"><div class="wrap">
+  <div class="ch-head"><span class="lbl">03 · Cores</span><div><h2>Grafite, papel e um azul que ninguém esquece</h2><p>A mesma paleta que você aprovou. O azul é a assinatura: aparece em toda peça, mas sempre em pouca área, só no que é importante.</p></div></div>
+  <div class="stack">
+    <div class="g3" id="sw"></div>
+    <div class="board"><h3>Proporção em cada peça</h3>
+      <div style="display:flex;height:40px;border-radius:4px;overflow:hidden;margin-top:10px;font-family:var(--mono);font-size:11px"><div style="flex:60;background:#0E1013;display:grid;place-items:center;border:1px solid var(--line)">Grafite 60%</div><div style="flex:25;background:#F2F1ED;color:#0E1013;display:grid;place-items:center">Papel 25%</div><div style="flex:15;background:#2E46F0;display:grid;place-items:center">Azul 15%</div></div>
+      <p class="muted" style="margin-top:10px">Contraste: Ultramar Luz sobre grafite 4,6:1; Ultramar sobre papel 5,7:1; branco sobre Ultramar 6,5:1. Todos passam para texto.</p></div>
+  </div>
+</div></section>
+
+<section class="ch" id="tipo"><div class="wrap">
+  <div class="ch-head"><span class="lbl">04 · Tipografia</span><div><h2>Títulos que param o dedo</h2><p>Três fontes gratuitas do Google Fonts, disponíveis também no Canva e no CapCut.</p></div></div>
+  <div class="tspec"><div class="s" style="font-family:var(--display);font-weight:800;letter-spacing:-.035em">Sora ExtraBold</div><div><span class="lbl">Títulos de post e capa</span><p class="muted" style="margin-top:6px">Peso 800, espaçamento apertado (-3%), no máximo 7 palavras. Light 300 para frases de apoio.</p></div></div>
+  <div class="tspec"><div class="s" style="font-family:var(--body)">IBM Plex Sans</div><div><span class="lbl">Textos e legendas</span><p class="muted" style="margin-top:6px">Passos de tutorial, texto do guia e do site. Regular 400, Medium 500.</p></div></div>
+  <div class="tspec"><div class="s" style="font-family:var(--mono);font-size:clamp(28px,4.4vw,48px)">JetBrains Mono</div><div><span class="lbl">Prompts e etiquetas</span><p class="muted" style="margin-top:6px">Todo comando de IA que você mostrar aparece nesta fonte, numa caixa. Vira marca registrada do perfil.</p></div></div>
+</div></section>
+
+<section class="ch" id="rosto"><div class="wrap">
+  <div class="ch-head"><span class="lbl">05 · Seu rosto</span><div><h2>O principal ativo da marca</h2><p>Sua foto atual já está no caminho certo: fundo escuro, luz azulada, expressão de quem pensa. A regra é repetir esse padrão em tudo.</p></div></div>
+  <div class="g2">
+    <div class="board" style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><div class="face" style="width:150px;aspect-ratio:1;border:3px solid var(--ultra);flex:none"></div><div style="flex:1;min-width:200px"><h3>Foto de perfil</h3><p class="muted">Mantenha esta. Só tire o selo "IA" da foto: o nome do perfil já diz isso, e o selo pequeno vira ruído no tamanho de miniatura. Contorno azul ultramar.</p></div></div>
+    <div class="board"><h3>Padrão de foto e vídeo</h3><ul><li>Fundo escuro e desfocado, nunca parede branca.</li><li>Luz principal suave de lado e um recorte azul atrás.</li><li>Camiseta lisa preta, grafite ou azul-marinho. Sem estampas.</li><li>Óculos sempre: virou parte da sua imagem.</li><li>Nas capas, rosto recortado na parte de baixo e título em cima.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="ch" id="instagram"><div class="wrap">
+  <div class="ch-head"><span class="lbl">06 · Instagram</span><div><h2>Como o perfil fica com a identidade aplicada</h2><p>Bio nova, destaques com ícones próprios e um feed que alterna três fundos (grafite, papel e azul), sempre com a mesma tipografia.</p></div></div>
+  <div class="g2" style="align-items:start">
+    <div class="phone">
+      <div class="ig-top">uelto.ia</div>
+      <div class="ig-h"><div class="face"></div><div class="ig-st"><div><b>24</b>posts</div><div><b>—</b>seguidores</div><div><b>—</b>seguindo</div></div></div>
+      <div class="ig-bio"><b>Uelto | IA na Prática</b><br>IA para profissionais e pequenos empresários<br>Ferramentas que economizam horas, testadas por mim<br>📥 Guia grátis: 10 IAs para usar hoje ↓<br><a>uelto.com.br/guia</a></div>
+      <div class="ig-hl"><div><span class="on"><svg><use href="#i-gift"/></svg></span>Guia grátis</div><div><span><svg><use href="#i-start"/></svg></span>Comece</div><div><span><svg><use href="#i-tool"/></svg></span>Ferramentas</div><div><span><svg><use href="#i-flow"/></svg></span>Automação</div><div><span><svg><use href="#i-cam"/></svg></span>Bastidores</div></div>
+      <div class="ig-grid">
+        <div style="background:#0E1013;color:#F2F1ED"><small>FERRAMENTA</small>Reunião vira tarefa em 1 min<i class="f"></i></div>
+        <div style="background:#F2F1ED;color:#0E1013"><small>CARROSSEL</small>5 tarefas que a IA faz por você</div>
+        <div style="background:#2E46F0;color:#fff"><small>GUIA GRÁTIS</small>10 IAs para usar hoje</div>
+        <div style="background:#F2F1ED;color:#0E1013"><small>COMPARATIVO</small>ChatGPT, Claude ou Gemini?</div>
+        <div style="background:#0E1013;color:#F2F1ED"><small>PROMPT</small>O comando que eu mais uso<i class="f"></i></div>
+        <div style="background:#0E1013;color:#F2F1ED"><small>FERRAMENTA</small>Apresentação em 5 minutos</div>
+        <div style="background:#0E1013;color:#F2F1ED"><small>BASTIDOR</small>Sou o Uelto. Prazer.<i class="f"></i></div>
+        <div style="background:#2E46F0;color:#fff"><small>DICA</small>E-mail difícil em 2 min</div>
+        <div style="background:#F2F1ED;color:#0E1013"><small>CARROSSEL</small>4 erros com IA</div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="board"><h3>Ritmo do feed</h3><p class="muted">Alterne grafite (Reels com seu rosto), papel (carrosséis de conteúdo) e azul (guia, chamadas e dicas rápidas). O azul nunca aparece em dois posts seguidos: assim ele continua chamando atenção.</p></div>
+      <div class="board"><h3>Destaques</h3><p class="muted" style="margin-bottom:14px">Ícones de linha, brancos, sobre grafite. Só o Guia grátis fica em azul, porque é o mais importante.</p><div class="hl"><div><span class="on"><svg><use href="#i-gift"/></svg></span>Guia grátis</div><div><span><svg><use href="#i-start"/></svg></span>Comece</div><div><span><svg><use href="#i-tool"/></svg></span>Ferramentas</div><div><span><svg><use href="#i-flow"/></svg></span>Automação</div><div><span><svg><use href="#i-cam"/></svg></span>Bastidores</div></div></div>
+      <div class="board"><h3>Formato correto</h3><p class="muted">Publique posts em <b style="color:var(--paper)">3:4 (1080 × 1440 px)</b>, o mesmo recorte da grade do perfil. Foi por isso que o título "O MUNDO ESTÁ MUDANDO" ficou cortado na miniatura. Reels em 9:16, com o texto dentro da faixa central marcada nos modelos.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="modelos"><div class="wrap">
+  <div class="ch-head"><span class="lbl">07 · Modelos</span><div><h2>Cinco formatos que cobrem o calendário inteiro</h2><p>Todos em 3:4 ou 9:16, com o mesmo cabeçalho, a mesma fonte e o quadrado azul. Exemplos com ganchos reais do calendário de 30 dias.</p></div></div>
+  <div class="stack" style="gap:40px">
+    <div>
+      <h3 style="font-size:18px;margin-bottom:14px">Carrossel · capa, passo a passo e chamada final</h3>
+      <div class="g4 keep2">
+        <div class="mk"><div class="post light"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>01/07</span></div><div><h4>5 tarefas que a IA faz <em>em minutos</em></h4><p class="sub">E você ainda faz na mão.</p></div><div class="foot"><span>Salve para usar depois</span><span>→</span></div></div><p class="cap2">Capa · fundo papel</p></div>
+        <div class="mk"><div class="post light"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>02/07</span></div><div><div class="num">1</div><h4 style="font-size:8cqw;margin-top:3cqw">Resumir reuniões</h4><div class="steps" style="margin-top:4cqw"><div><b>→</b>Grave a reunião com o Granola</div><div><b>→</b>Peça ao Claude as tarefas e os prazos</div><div><b>→</b>Envie o resumo para o grupo</div></div></div><div class="foot"><span>Ferramenta: Granola + Claude</span></div></div><p class="cap2">Interno · número grande</p></div>
+        <div class="mk"><div class="post"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>05/07</span></div><div><h4 style="font-size:8cqw;margin-bottom:4cqw">Copie este comando</h4><div class="prompt">Você é meu assistente. Transforme este áudio em uma lista de tarefas com responsável e prazo. Áudio: [cole aqui]</div></div><div class="foot"><span>Funciona no ChatGPT, Claude e Gemini</span></div></div><p class="cap2">Interno · prompt em caixa</p></div>
+        <div class="mk"><div class="post ultra"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>07/07</span></div><div><div class="face avatar" style="border:2px solid #fff"></div><h4 style="font-size:8.6cqw;margin-top:4cqw">Quer as 10 IAs que eu uso todo dia?</h4><span class="cta" style="background:#fff;color:#2E46F0">Comente GUIA</span></div><div class="foot"><span>@uelto.ia</span><span>Guia grátis</span></div></div><p class="cap2">Final · chamada para o guia</p></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:18px;margin-bottom:14px">Post único, capa de Reels e story</h3>
+      <div class="g4 keep2">
+        <div class="mk"><div class="post ultra"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>Dica rápida</span></div><div><h4>E-mail difícil respondido <em style="color:#fff;text-decoration:underline;text-decoration-thickness:.08em;text-underline-offset:.12em">em 2 minutos</em></h4><p class="sub">O comando está na legenda.</p></div><div class="foot"><span>Salve</span><span>@uelto.ia</span></div></div><p class="cap2">Dica rápida · fundo azul</p></div>
+        <div class="mk"><div class="reel"><div class="ph"></div><div class="safe"><span>área visível na grade</span></div><div class="t"><span class="tag">Ferramenta</span><h4>Reunião de 1 hora vira <em>tarefa em 1 minuto</em></h4></div></div><p class="cap2">Capa de Reels · 9:16</p></div>
+        <div class="mk"><div class="reel story"><div style="position:absolute;left:7cqw;top:7cqw;right:7cqw;display:flex;justify-content:space-between;align-items:center"><span class="wm" style="font-size:6cqw">uelto<i class="dot"></i><span class="ia">ia</span></span><span style="font-family:var(--mono);font-size:3.4cqw;color:var(--muted)">ENQUETE</span></div><div style="position:absolute;left:8cqw;right:8cqw;top:22%"><h4 style="font-family:var(--display);font-weight:800;font-size:9.5cqw;line-height:1.05;letter-spacing:-.03em">Qual destes você quer aprender a fundo?</h4></div><div class="poll"><div>IA para produtividade</div><div>Atendimento no WhatsApp</div><div>Conteúdo com IA</div></div></div><p class="cap2">Story · enquete</p></div>
+        <div class="mk"><div class="post"><div class="top"><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span><span>Comparativo</span></div><div><h4 style="font-size:8.6cqw">ChatGPT, Claude ou Gemini?</h4><div class="steps" style="margin-top:5cqw"><div><b>A</b>Escrever e revisar textos</div><div><b>B</b>Ler documentos longos</div><div><b>C</b>Trabalhar dentro do Google</div></div></div><div class="foot"><span>Resposta no carrossel</span><span>→</span></div></div><p class="cap2">Comparativo · fundo grafite</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="guia"><div class="wrap">
+  <div class="ch-head"><span class="lbl">08 · Guia e site</span><div><h2>A identidade no material gratuito e na página de captura</h2><p>Prévia do próximo passo: o PDF e a página onde a pessoa deixa nome e WhatsApp. O conteúdo final vem depois que a identidade for aprovada.</p></div></div>
+  <div style="display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:24px;align-items:start" class="guia-grid">
+    <div class="mk"><div class="pdf"><span class="k">Guia gratuito · 2026</span><h4>10 IAs para usar <em>hoje</em></h4><div><p style="font-size:4.6cqw;color:var(--muted);margin-bottom:5cqw;position:relative">Passo a passo para profissionais e pequenos empresários.</p><span class="wm">uelto<i class="dot"></i><span class="ia">ia</span></span></div></div><p class="cap2">Capa do PDF · A4</p></div>
+    <div class="lp">
+      <div class="bar"><i></i><i></i><i></i><span>uelto.com.br/guia</span></div>
+      <div class="in">
+        <div><span class="wm" style="font-size:24px">uelto<i class="dot"></i><span class="ia">ia</span></span><h4 style="margin-top:20px">As 10 IAs que eu uso <em>todo dia</em> no trabalho</h4><p>Guia gratuito em PDF, com o passo a passo de cada ferramenta.</p><ul><li>Reuniões, e-mails e propostas</li><li>Planilhas sem fórmulas</li><li>Atendimento e conteúdo</li></ul></div>
+        <div class="form"><div class="f">Nome<span>Seu primeiro nome</span></div><div class="f">WhatsApp<span>(11) 9 0000-0000</span></div><div class="f">E-mail (opcional)<span>voce@email.com</span></div><div class="ck"><i></i>Aceito receber conteúdos e ofertas do Uelto. Posso sair quando quiser.</div><div class="go">Quero o guia grátis</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="regras"><div class="wrap">
+  <div class="ch-head"><span class="lbl">09 · Regras rápidas</span><div><h2>Checklist antes de postar</h2></div></div>
+  <div class="g3">
+    <div class="board"><h3>Texto</h3><ul><li>Título com no máximo 7 palavras.</li><li>Uma palavra em azul, no máximo.</li><li>Gancho com benefício concreto, nunca "O mundo está mudando".</li></ul></div>
+    <div class="board"><h3>Visual</h3><ul><li>Formato 3:4 para posts e 9:16 para Reels.</li><li>Logotipo no canto superior esquerdo.</li><li>Fundo grafite, papel ou azul. Nada de foto de banco de imagens.</li></ul></div>
+    <div class="board"><h3>Marca</h3><ul><li>Sem emoji de robô e sem cérebro brilhante.</li><li>Prompts sempre em caixa com fonte mono.</li><li>Seu rosto em pelo menos 1 de cada 3 posts.</li></ul></div>
+  </div>
+</div></section>
+
+</main>
+<div class="wrap"><footer><span class="wm" style="font-size:20px">uelto<i class="dot"></i><span class="ia">ia</span></span><span>Identidade visual · v1.0 · nov 2026</span></footer></div>
+
+<script>
+(function(){
+  var c=[["Grafite","#0E1013","Fundo principal, Reels, capas","#F2F1ED"],["Papel","#F2F1ED","Carrosséis, guia, site","#0E1013"],["Ultramar","#2E46F0","Assinatura: chamadas, botões, guia","#FFFFFF"],["Ultramar Luz","#5B6DFF","Destaques sobre grafite","#0E1013"],["Ardósia","#23272E","Caixas, cartões, formulários","#F2F1ED"],["Névoa","#8A9099","Textos de apoio, linhas","#0E1013"]];
+  var box=document.getElementById('sw');
+  c.forEach(function(x){var d=document.createElement('div');d.className='sw';d.innerHTML='<div class="c" style="background:'+x[1]+';color:'+x[3]+';'+(x[1]=='#0E1013'?'box-shadow:inset 0 0 0 1px #2E333B':'')+'">'+x[1]+'</div><div class="i"><b>'+x[0]+'</b><code>'+x[1]+'</code><p class="muted" style="margin-top:4px">'+x[2]+'</p></div>';box.appendChild(d)});
+})();
+</script>
+<style>@media (max-width:700px){.guia-grid{grid-template-columns:1fr!important}.guia-grid .mk{max-width:260px}}</style>
